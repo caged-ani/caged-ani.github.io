@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="theme-color" content="#34495e">
-  <title>Hexo</title>
+  <title>Java基本程序设计笔记（一） | Hexo</title>
   <link rel="alternate" href="path/of/rss" type="application/atom+xml">
   <link rel="shortcut icon" type="image/ico" href="/favicon.ico">
   
@@ -60,8 +60,11 @@
     <!-- <img src="/" alt="banner"> -->
     <div class="banner-title">
       
-        <div class="intro">
-          practice makes perfect
+        <div class="post-title">
+          Java基本程序设计笔记（一）
+            <div class="post-tags">
+    		    
+    	      </div>
         </div>
       
     </div>
@@ -69,25 +72,28 @@
 </div>
 
       <main class="main"id="main">
-          <section class="posts">
+          <article class="post">
   
-    <article class="post" id="post-excerpt">
-      <header>
-        <div class="post-title">
-          <h1><a class="post-title-link" href="/2020/02/19/JavaBasic1/">Java基本程序设计笔记（一）</a></h1>
-        </div>
-        <div class="post-meta">
-          <span class="post-time"><i class="iconfont icon-calendar"></i>2020-02-19</span>
-          
-          <!---------------------------------------->
-            
-        <!----------------------------------------->
-        </div>
-      </header>
-      <div class="post-content">
-        <!-------------->
+
+  <header>
+    <div class="post-title mobile-post-title">
+      <h1>Java基本程序设计笔记（一）</h1>
+        <div class="post-tags">
         
-          <p><strong>算法</strong>可以帮助程序员在使用程序设计语言编写程序之前进行规划<br><strong>算法</strong>可以用自然语言或者伪代码（自然语言和程序设计语言混在一起使用）描述。<br>例如计算员面积的算法描述如下：<br>(1)读入半径<br>(2)利用公式计算面积<br>(3)显示面积</p>
+        </div>
+    </div>
+    <div class="post-meta">
+      <span class="post-time"><i class="iconfont icon-calendar"></i>2020-02-19</span>
+      
+      <!----------------------------------->
+        
+      <!----------------------------------->
+    </div>
+  </header>
+  
+
+  <div class="post-content">
+    <p><strong>算法</strong>可以帮助程序员在使用程序设计语言编写程序之前进行规划<br><strong>算法</strong>可以用自然语言或者伪代码（自然语言和程序设计语言混在一起使用）描述。<br>例如计算员面积的算法描述如下：<br>(1)读入半径<br>(2)利用公式计算面积<br>(3)显示面积</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">ComputeArea</span> &#123;</span></span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">		double radius; <span class="regexp">//</span>Declare</span><br><span class="line">		double area;</span><br><span class="line"></span><br><span class="line">		/<span class="regexp">/1.读取半径</span></span><br><span class="line"><span class="regexp">		radius = 20;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">		/</span><span class="regexp">/2.代入公式，计算面积</span></span><br><span class="line"><span class="regexp">		area = radius * radius * 3.14159;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">		/</span><span class="regexp">/3.显示面积</span></span><br><span class="line"><span class="regexp">		System.out.println("The area for the circle of radius "+radius+" is "+area);</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
 <p><strong>编写代码的过程实际是在将算法翻译成程序</strong></p>
 <ol>
@@ -119,101 +125,24 @@
 </ol>
 <p>}</p>
 
-        
-        <!-------------->
-      </div>
-      <div class="post-tags">
-      
-    </div>
-    </article>
-  
-    <article class="post" id="post-excerpt">
-      <header>
-        <div class="post-title">
-          <h1><a class="post-title-link" href="/2020/02/16/JavaBasi/">JavaBasi</a></h1>
-        </div>
-        <div class="post-meta">
-          <span class="post-time"><i class="iconfont icon-calendar"></i>2020-02-16</span>
-          
-          <!---------------------------------------->
-            
-        <!----------------------------------------->
-        </div>
-      </header>
-      <div class="post-content">
-        <!-------------->
-        
-          <h1 id="Java基础练习（一）"><a href="#Java基础练习（一）" class="headerlink" title="Java基础练习（一）"></a>Java基础练习（一）</h1><h2 id="初始"><a href="#初始" class="headerlink" title="初始"></a>初始</h2><ol>
-<li><p>编写程序，显示以下图案:</p>
-<pre><code>    J     A     V     V     A
-    J    A A     V   V     A A
-J   J   AAAAA     V V     AAAAA
- J J   A     A     V     A     A</code></pre><pre><code class="ruby">public <span class="class"><span class="keyword">class</span> <span class="title">shape</span> {</span>
-
- public static void main(String[] args) {
-
-     System.out.println(<span class="string">"    J    A    V     V    A"</span>);
-     System.out.println(<span class="string">"    J   A A    V   V    A A"</span>);
-     System.out.println(<span class="string">"J   J  AAAAA    V V    AAAAA"</span>);
-     System.out.println(<span class="string">" J J  A     A    V    A     A"</span>);
-
- }
-</code></pre>
-</li>
-</ol>
-<p>}</p>
-<h6 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h6><ol>
-<li>(1) Java语言规范：定义Java语法<br>(2) API(Application Program Interface,应用程序接口)：定义Java库<br>(3) JDK(Java Development Toolkit,Java开发工具包)：用于编译、运行和测试Java程序的软件<br>(4) JRE(Java Runtime Environment)：运行Java程序的程序<br>(5) IDE(Integrated Development Environment,集成开发环境)：快速开发Java程序</li>
-<li>源程序是高级语言编写的程序</li>
-<li>计算机是存储和处理数据的电子设备，包括硬件和软件两部分</li>
-</ol>
-
-        
-        <!-------------->
-      </div>
-      <div class="post-tags">
-      
-    </div>
-    </article>
-  
-    <article class="post" id="post-excerpt">
-      <header>
-        <div class="post-title">
-          <h1><a class="post-title-link" href="/2020/01/18/aBlog/">aBlog</a></h1>
-        </div>
-        <div class="post-meta">
-          <span class="post-time"><i class="iconfont icon-calendar"></i>2020-01-18</span>
-          
-          <!---------------------------------------->
-            
-        <!----------------------------------------->
-        </div>
-      </header>
-      <div class="post-content">
-        <!-------------->
-        
-          <h1 id="有一个标题"><a href="#有一个标题" class="headerlink" title="有一个标题"></a>有一个标题</h1><h2 id="还有一个"><a href="#还有一个" class="headerlink" title="还有一个"></a>还有一个</h2><hr>
-<p><a href="https://jingyan.baidu.com/article/154b463178bac928cb8f4179.html" target="_blank" rel="noopener">一个连接</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String args[])&#123;</span><br><span class="line">  System.out.println(<span class="string">"This is a great coding!!!"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-        
-        <!-------------->
-      </div>
-      <div class="post-tags">
-      
-    </div>
-    </article>
-  
-</section>
+  </div>
+  <div class="post-footer">the end</div>
+</article>
 
           
-     <nav class="pagination">
+  <nav class="pagination post-nav">
     
+    
+      <a href="/2020/02/16/JavaBasi/">
+        <span class="next-post">JavaBasi<i class="iconfont icon-more"></i></span>
+      </a>
     
   </nav>
 
 
           
+  
+
 
       </main>
     </div>
