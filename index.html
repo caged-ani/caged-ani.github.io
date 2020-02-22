@@ -141,7 +141,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/19/JavaBasic1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/22/Chapter2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -155,95 +155,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/02/19/JavaBasic1/" class="post-title-link" itemprop="url">Java基本程序设计笔记（一）</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-02-19 21:54:07" itemprop="dateCreated datePublished" datetime="2020-02-19T21:54:07+08:00">2020-02-19</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><strong>算法</strong>可以帮助程序员在使用程序设计语言编写程序之前进行规划<br><strong>算法</strong>可以用自然语言或者伪代码（自然语言和程序设计语言混在一起使用）描述。<br>例如计算员面积的算法描述如下：<br>(1)读入半径<br>(2)利用公式计算面积<br>(3)显示面积</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">ComputeArea</span> &#123;</span></span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">		double radius; <span class="regexp">//</span>Declare</span><br><span class="line">		double area;</span><br><span class="line"></span><br><span class="line">		/<span class="regexp">/1.读取半径</span></span><br><span class="line"><span class="regexp">		radius = 20;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">		/</span><span class="regexp">/2.代入公式，计算面积</span></span><br><span class="line"><span class="regexp">		area = radius * radius * 3.14159;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">		/</span><span class="regexp">/3.显示面积</span></span><br><span class="line"><span class="regexp">		System.out.println("The area for the circle of radius "+radius+" is "+area);</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
-<p><strong>编写代码的过程实际是在将算法翻译成程序</strong></p>
-<ol>
-<li><p>为了存储半径值要先声明变量</p>
-</li>
-<li><p>每个变量都有名字、类型、大小和值</p>
-</li>
-<li><p>列出程序中对应的每行语句执行后的变量叫做跟踪一个程序，有助于理解一个程序是如何工作的，也是查找程序错误的非常有用的工具<br>改进程序，<strong>使之可以从键盘读取半径值</strong></p>
-<pre><code class="ruby">public <span class="class"><span class="keyword">class</span> <span class="title">ComputeAreaWithConsoleInput</span> {</span>
-
- public static void main(String[] args) {
-
-     /<span class="regexp">/创建一个Scanner类</span>
-<span class="regexp">     Scanner input = new Scanner(System.in);</span>
-<span class="regexp"></span>
-<span class="regexp">     /</span><span class="regexp">/提示用户输入半径</span>
-<span class="regexp">     System.out.print("Enter a number for radius: ");</span>
-<span class="regexp">     double radius = input.nextDouble();/</span><span class="regexp">/1. 调用方法读取半径</span>
-<span class="regexp"></span>
-<span class="regexp">     /</span><span class="regexp">/2. 代入公式，计算面积</span>
-<span class="regexp">     double area = radius * radius * 3.14159;</span>
-<span class="regexp"></span>
-<span class="regexp">     /</span><span class="regexp">/3. 显示面积</span>
-<span class="regexp">     System.out.println("The area for the circle of radius "+radius+" is "+area);</span>
-<span class="regexp"></span>
-<span class="regexp"> }</span>
-<span class="regexp"></span></code></pre>
-</li>
-</ol>
-<p>}</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/16/JavaBasi/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/16/JavaBasi/" class="post-title-link" itemprop="url">JavaBasi</a>
+            <a href="/2020/02/22/Chapter2/" class="post-title-link" itemprop="url">Java学习笔记（一）</a>
         </h1>
 
         <div class="post-meta">
@@ -254,7 +166,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-02-16 21:17:38 / Modified: 21:18:35" itemprop="dateCreated datePublished" datetime="2020-02-16T21:17:38+08:00">2020-02-16</time>
+              <time title="Created: 2020-02-22 16:13:23 / Modified: 17:07:59" itemprop="dateCreated datePublished" datetime="2020-02-22T16:13:23+08:00">2020-02-22</time>
             </span>
 
           
@@ -268,29 +180,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Java基础练习（一）"><a href="#Java基础练习（一）" class="headerlink" title="Java基础练习（一）"></a>Java基础练习（一）</h1><h2 id="初始"><a href="#初始" class="headerlink" title="初始"></a>初始</h2><ol>
-<li><p>编写程序，显示以下图案:</p>
-<pre><code>    J     A     V     V     A
-    J    A A     V   V     A A
-J   J   AAAAA     V V     AAAAA
- J J   A     A     V     A     A</code></pre><pre><code class="ruby">public <span class="class"><span class="keyword">class</span> <span class="title">shape</span> {</span>
-
- public static void main(String[] args) {
-
-     System.out.println(<span class="string">"    J    A    V     V    A"</span>);
-     System.out.println(<span class="string">"    J   A A    V   V    A A"</span>);
-     System.out.println(<span class="string">"J   J  AAAAA    V V    AAAAA"</span>);
-     System.out.println(<span class="string">" J J  A     A    V    A     A"</span>);
-
- }
-</code></pre>
-</li>
-</ol>
-<p>}</p>
-<h6 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h6><ol>
-<li>(1) Java语言规范：定义Java语法<br>(2) API(Application Program Interface,应用程序接口)：定义Java库<br>(3) JDK(Java Development Toolkit,Java开发工具包)：用于编译、运行和测试Java程序的软件<br>(4) JRE(Java Runtime Environment)：运行Java程序的程序<br>(5) IDE(Integrated Development Environment,集成开发环境)：快速开发Java程序</li>
-<li>源程序是高级语言编写的程序</li>
-<li>计算机是存储和处理数据的电子设备，包括硬件和软件两部分</li>
+          <ol>
+<li>声明明确导入和声明通配导入是没有性能差异的</li>
+<li>标识符必须遵从以下规则：<br>(1)必须是由字母、数字、下划线、和美元符号（$）构成的字符序列<br>(2)必须以字母、下划线或美元符号（$）开头，不能以数字开头<br>(3)不能是保留字<br>(4)不能是true、false或者null<br>(5)可以为任何长度</li>
+<li>变量、常量、方法和类的命名习惯<br>(1)使用小写字母命名变量和方法。如果一个命名包含多个单词，就将它们连在一起，第一个单词的字母小写，而后每个单词的首字母大写。这种命名风格称为驼峰命名法。<br>(2)类名中每个单词的首字母大写。<br>(3)常量中所有的字母大写，两个单词间用下划线连接。</li>
+<li>浮点型除以零不会有异常</li>
+<li>一个float值有7到8位小数位，一个double值有15到17位小数位</li>
+<li>调用<code>System.currentTimeMillis()</code>可获得一个long类型的以毫秒为单位的当前时间值，然后可以利用 / 和 % 操作符提取得到秒、分钟以及小时</li>
+<li><code>x++;</code>可以用做一个语句</li>
+<li>在一次计算中可各种类型的数值一起使用</li>
+<li>软件开发生命周期：<br>(1)需求规范<br>(2)分析<br>(3)设计<br>(4)实现<br>(5)测试<br>(6)部署<br>(7)维护</li>
+<li>不能在将一个变量声明为<code>int</code>类型后，又将其声明为<code>double</code>型</li>
+<li>溢出：当一个变量被赋予一个超过其储存大小的值，以至于无法存储该值，称为溢出；<strong>Java不会给出关于溢出的警告或者错误</strong>，处理时要特别小心。如果一个浮点数过小（非常接近于0），将导致下溢，Java将其近似为0，所以一般情况下不考虑下溢的问题</li>
+<li>舍入错误是指计算得到的数字的近似值和确切的数学值之间的差异。例如<code>System.out.print(1.0 - 0.9)</code>显示的是<code>0.09999999999999998</code>而不是<code>0.1</code>。整数可以精确地存储，所以整数运算得到的是精确的证书结果值，即只有浮点数操作会产生舍入错误</li>
 </ol>
 
       
@@ -435,7 +337,7 @@ J   J   AAAAA     V V     AAAAA
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
