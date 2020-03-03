@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="基于Java学习笔记(二)的17道练习题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java学习练习题(二)">
+<meta property="og:url" content="http://yoursite.com/2020/03/03/Chapter3practice/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="基于Java学习笔记(二)的17道练习题">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-03T08:20:37.000Z">
+<meta property="article:modified_time" content="2020-03-03T15:54:09.789Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/03/03/Chapter3practice/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>Java学习练习题(二) | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-right"></div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/03/Chapter3practice/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Java学习练习题(二)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-03-03 16:20:37 / Modified: 23:54:09" itemprop="dateCreated datePublished" datetime="2020-03-03T16:20:37+08:00">2020-03-03</time>
+            </span>
+
+          
+            <div class="post-description">基于Java学习笔记(二)的17道练习题</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>1.(<em>游戏：三数相加</em>)程序产生三个随机数，并提示用户输入这三个随机数的和</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AdditionQuiz</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> number1 = (<span class="keyword">int</span>)(System.currentTimeMillis() % <span class="number">10</span>);</span><br><span class="line">	<span class="keyword">int</span> number2 = (<span class="keyword">int</span>)(System.currentTimeMillis() / <span class="number">10</span> % <span class="number">10</span>);</span><br><span class="line">	<span class="keyword">int</span> number3 = (<span class="keyword">int</span>)(System.currentTimeMillis() / <span class="number">100</span> % <span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//Create a Scanner</span></span><br><span class="line">	Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">	System.out.print(<span class="string">"What is "</span> + number1 + <span class="string">" + "</span> + number2 + <span class="string">" + "</span> + number3 + <span class="string">"? "</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> answer = input.nextInt();</span><br><span class="line"></span><br><span class="line">	System.out.println(number1 + <span class="string">" + "</span> + number2 + <span class="string">" + "</span> + number3 + <span class="string">" = "</span> + answer +</span><br><span class="line">			<span class="string">" is "</span> + (number1 + number2 + number3 == answer));</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.(<em>随机月份</em>)编写一个随机产生1和12之间整数的程序，并根据数字1,2，……，12显示对应的英文月份</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RandomMonth</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Generate a random number</span></span><br><span class="line">	<span class="keyword">int</span> month = (<span class="keyword">int</span>)(Math.random() * <span class="number">12</span> + <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">	System.out.println(month);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Judge the month</span></span><br><span class="line">	<span class="keyword">switch</span> (month)&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">1</span>: System.out.println(<span class="string">"January"</span>);	<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">2</span>: System.out.println(<span class="string">"February"</span>);	<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">3</span>: System.out.println(<span class="string">"March"</span>);	<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">4</span>: System.out.println(<span class="string">"April"</span>);	<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">5</span>: System.out.println(<span class="string">"May"</span>);	<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">6</span>: System.out.println(<span class="string">"June"</span>);	<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">7</span>: System.out.println(<span class="string">"July"</span>);	<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">8</span>: System.out.println(<span class="string">"August"</span>);	<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">9</span>: System.out.println(<span class="string">"September"</span>);	<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">10</span>: System.out.println(<span class="string">"October"</span>);	<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">11</span>: System.out.println(<span class="string">"November"</span>);	<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">12</span>: System.out.println(<span class="string">"December"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3.<em>(健康应用：BMI</em>)让用户输入重量、英尺和英寸。注意：1英尺 = 0.3048米</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ComputeAndInterpretBMI</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 1. Prompt the user to enter weight in punds</span></span><br><span class="line">	System.out.print(<span class="string">"Enter weight in pounds: "</span>);</span><br><span class="line">	<span class="keyword">double</span> weight = input.nextDouble();</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 2. Prompt the user to enter height in feet</span></span><br><span class="line">	System.out.print(<span class="string">"Enter feet: "</span>);</span><br><span class="line">	<span class="keyword">double</span> feet = input.nextDouble();</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 3. Prompt the user to enter height in inches</span></span><br><span class="line">	System.out.print(<span class="string">"Enter inches: "</span>);</span><br><span class="line">	<span class="keyword">double</span> height = input.nextDouble();</span><br><span class="line"></span><br><span class="line">	<span class="keyword">final</span> <span class="keyword">double</span> KILOGRAMS_PER_POUND = <span class="number">0.45359237</span>;	<span class="comment">// Constant</span></span><br><span class="line">	<span class="keyword">final</span> <span class="keyword">double</span> METERS_PER_INCH = <span class="number">0.0254</span>;	<span class="comment">// Constant</span></span><br><span class="line">	<span class="keyword">final</span> <span class="keyword">double</span> METERS_PER_FEET = <span class="number">0.3048</span>;	<span class="comment">//Constant</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// Compute BMI</span></span><br><span class="line">	<span class="keyword">double</span> weightInKilograms = weight * KILOGRAMS_PER_POUND;</span><br><span class="line">	<span class="keyword">double</span> heightInMeters = height * METERS_PER_INCH + feet * METERS_PER_FEET;</span><br><span class="line">	<span class="keyword">double</span> bmi = weightInKilograms / (heightInMeters * heightInMeters);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//Display result</span></span><br><span class="line">	System.out.println(<span class="string">"BMI is "</span> + bmi);</span><br><span class="line">	<span class="keyword">if</span>(bmi &lt; <span class="number">18.5</span>)</span><br><span class="line">		System.out.println(<span class="string">"Underweight"</span>);</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(bmi &lt; <span class="number">25</span>)</span><br><span class="line">		System.out.println(<span class="string">"Normal"</span>);</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(bmi &lt; <span class="number">30</span>)</span><br><span class="line">		System.out.println(<span class="string">"Overweight"</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		System.out.println(<span class="string">"Obese"</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>4.(<em>对三个整数排序</em>)编写程序，提示用户输入三个整数。以非降序的形式显示这三个整数</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SimpleSort</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Prompt the user to enter three number</span></span><br><span class="line">	System.out.print(<span class="string">"Enter three number: "</span>);</span><br><span class="line">	<span class="keyword">int</span> number1 = input.nextInt();</span><br><span class="line">	<span class="keyword">int</span> number2 = input.nextInt();</span><br><span class="line">	<span class="keyword">int</span> number3 = input.nextInt();</span><br><span class="line"></span><br><span class="line">	 <span class="keyword">if</span> (number1 &gt; number2) &#123;</span><br><span class="line">		 <span class="keyword">int</span> temp = number1;</span><br><span class="line">		 number1 = number2;</span><br><span class="line">		 number2 = temp;</span><br><span class="line">	 &#125;</span><br><span class="line">	 <span class="keyword">else</span> <span class="keyword">if</span> (number2 &gt; number3) &#123;</span><br><span class="line">		 <span class="keyword">int</span> temp = number2;</span><br><span class="line">		 number2 = number3;</span><br><span class="line">		 number3 = temp;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	 System.out.print(number1 + <span class="string">" "</span> + number2 + <span class="string">" "</span> + number3);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>5.(<em>游戏：加法测试</em>)随机产生一个计算两个小于100的整数的减法问题</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 1. Generate two random single digit integers</span></span><br><span class="line">	<span class="keyword">int</span> number1 = (<span class="keyword">int</span>)(Math.random() * <span class="number">100</span>);</span><br><span class="line">	<span class="keyword">int</span> number2 = (<span class="keyword">int</span>)(Math.random() * <span class="number">100</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 2. If number 1 &lt; number2, swap number1 with number2</span></span><br><span class="line">	<span class="keyword">if</span>(number1 &lt; number2) &#123;</span><br><span class="line">		<span class="keyword">int</span> temp = number1;</span><br><span class="line">		number1 = number2;</span><br><span class="line">		number2 = temp;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 3. Prompt the student to answer "What is number1 - number2?"</span></span><br><span class="line">	System.out.print(<span class="string">"What is "</span> + number1 + <span class="string">" -"</span> +  number2 + <span class="string">" ? "</span>);</span><br><span class="line">	Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">	<span class="keyword">int</span> answer = input.nextInt();</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 4. Grade the answer and display the result</span></span><br><span class="line">	<span class="keyword">if</span>(number1 - number2 == answer)</span><br><span class="line">		System.out.println(<span class="string">"You are correct!"</span>);</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		System.out.println(<span class="string">"Your answer is wrong."</span>);</span><br><span class="line">		System.out.println(number1 + <span class="string">" - "</span> + number2 + <span class="string">" should be "</span> + (number1 - number2));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>6.(<em>回文数字</em>)提示用户输入一个三位的整数，然后确定它是否是回文数。如果一个数字从左到右以及从右到左都是一样的，这个数字称为回文数。负数的处理和正数一样</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Prompt the user to enter a number</span></span><br><span class="line">System.out.print(<span class="string">"Enter a three-digit integer: "</span>);</span><br><span class="line"><span class="keyword">int</span> number = input.nextInt();</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> hundredsPlace = number / <span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> digitPlace = number % <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (hundredsPlace == digitPlace)</span><br><span class="line">  System.out.println(number + <span class="string">" is a palindrome"</span>);</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  System.out.println(number + <span class="string">" is not a palindrome"</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>7.(<em>游戏：猜硬币的正反面</em>)随机产生一个正数0或1，它们分别代表硬币的正面和反面。程序提示用户输入一个猜测值，然后报告这个猜测值是正确还是错误的</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> side = (<span class="keyword">int</span>)(Math.random() * <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Prompt the user to enter a side</span></span><br><span class="line">	System.out.print(<span class="string">"Enter the side you guess: "</span>);</span><br><span class="line">	<span class="keyword">int</span> guess = input.nextInt();</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Display the result</span></span><br><span class="line">	<span class="keyword">if</span> (side == guess)</span><br><span class="line">		System.out.println(<span class="string">"Yes, you'are right!"</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		System.out.println(<span class="string">"Sorry, wrong."</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>8.(<em>随机点</em>)显示矩形中一个随机点的坐标。矩形中心位于(0, 0)、宽100，高200</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> x = (<span class="keyword">int</span>)(Math.random() * <span class="number">100</span> - <span class="number">50</span>);</span><br><span class="line">	<span class="keyword">int</span> y = (<span class="keyword">int</span>)(Math.random() * <span class="number">200</span> - <span class="number">100</span>);</span><br><span class="line"></span><br><span class="line">	System.out.println(<span class="string">"The point is ("</span> + x + <span class="string">", "</span> + y + <span class="string">")"</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>9.(<em>运输成本</em>)一个公司使用下面的函数，根据运输重量(以磅为单位)来计算运输成本(以美元计算)</p>
+<script type="math/tex; mode=display">c(w)= \begin{cases}
+3.5, & \text{若 $ 0<w \leqslant 1 $ } \\
+5.5, & \text{若 $ 1<w \leqslant3 $ } \\
+8.5, & \text{若 $ 3<w\leqslant 10 $ } \\
+10.5, & \text{若 $ 10<w\leqslant 20 $ }
+\end{cases}</script><p>编写一个程序，提示用户输入包裹重量，显示运输成本。如果重量大于20，显示信息<code>the package can not be shipped</code>。如果重量等于或小于0，则显示信息<code>Invalid input</code></p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Prompt the user to enter a weight</span></span><br><span class="line">	System.out.print(<span class="string">"Enter the weight of your package: "</span>);</span><br><span class="line">	<span class="keyword">double</span> weight = input.nextDouble();</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 先判断输入是否正确和能否进行运输</span></span><br><span class="line">	<span class="keyword">if</span> (weight &gt;= <span class="number">0</span> &amp;&amp; weight &lt;=<span class="number">20</span>) &#123;</span><br><span class="line">		<span class="keyword">double</span> depodite = <span class="number">0</span>;	<span class="comment">// 定义成本</span></span><br><span class="line">		<span class="keyword">if</span> (weight &gt; <span class="number">0</span> &amp;&amp; weight &lt;= <span class="number">1</span>)	<span class="comment">// 判断成本</span></span><br><span class="line">			depodite = <span class="number">3.5</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (weight &gt; <span class="number">1</span> &amp;&amp; weight &lt;= <span class="number">3</span>)</span><br><span class="line">			depodite = <span class="number">5.5</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (weight &gt; <span class="number">3</span> &amp;&amp; weight &lt;= <span class="number">10</span>)</span><br><span class="line">			depodite = <span class="number">8.5</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (weight &gt; <span class="number">10</span> &amp;&amp; weight &lt;= <span class="number">20</span>)</span><br><span class="line">			depodite = <span class="number">10.5</span>;</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"The deposite is "</span> + depodite);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (weight &lt; <span class="number">0</span>)</span><br><span class="line">		System.out.println(<span class="string">"Invalid input"</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		System.out.println(<span class="string">"The package can not be shipped"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>10.(<em>科学：风寒温度</em>)在华氏 $-58^\circ$ 到 $41^\circ$ 之间，并且风速大于2的情况下风寒的温度公式表示为</p>
+<script type="math/tex; mode=display">t_{wc}=35.74+0.6215t_a-35.75v^{0.16}+0.4275t_av^{0.16}</script><p>$t_a$ 是室外温度，$v$ 是速度。编写程序，提示用户输入一个温度值和一个风速值。如果输入值是合法的，那么显示风寒温度，否则显示一条消息，表明温度或风速是不合法数值</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Prompt the user to enter a temperature</span></span><br><span class="line">System.out.print(<span class="string">"Enter the temperature in Fahrenheit: "</span>);</span><br><span class="line"><span class="keyword">double</span> tmeperature = input.nextDouble();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Prompt the user to enter a speed</span></span><br><span class="line">System.out.print(<span class="string">"Enter the wind speed int miles per hour；"</span>);</span><br><span class="line"><span class="keyword">double</span> speed = input.nextDouble();</span><br><span class="line"><span class="keyword">if</span> (tmeperature &gt; -<span class="number">58</span> &amp;&amp; tmeperature &lt;<span class="number">41</span> &amp;&amp; speed &gt;= <span class="number">2</span>) &#123;</span><br><span class="line">  <span class="keyword">double</span> chillIndex = <span class="number">35.74</span> + <span class="number">0.6215</span> * tmeperature - <span class="number">35.75</span> * Math.pow(speed, <span class="number">0.16</span>) +</span><br><span class="line">      <span class="number">0.4275</span> * tmeperature * Math.pow(speed, <span class="number">0.16</span>);</span><br><span class="line">  System.out.println(<span class="string">"The wind chill index is "</span> + (<span class="keyword">int</span>)(chillIndex * <span class="number">100000</span> + <span class="number">0.5</span>) / <span class="number">100000.0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  System.out.println(<span class="string">"Invalid input"</span>);	<span class="comment">// 可嵌套扩展</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Java/" rel="tag"># Java</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/03/02/Chapter3/" rel="prev" title="Java学习笔记(二)">
+      <i class="fa fa-chevron-left"></i> Java学习笔记(二)
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.1
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
