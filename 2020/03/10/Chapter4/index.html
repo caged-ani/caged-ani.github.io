@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="数学函数、字符和字符串">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java学习笔记(三)">
+<meta property="og:url" content="http://yoursite.com/2020/03/10/Chapter4/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="数学函数、字符和字符串">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-10T02:47:01.000Z">
+<meta property="article:modified_time" content="2020-03-10T08:09:50.457Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/03/10/Chapter4/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>Java学习笔记(三) | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-right"></div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/10/Chapter4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Java学习笔记(三)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-03-10 10:47:01 / Modified: 16:09:50" itemprop="dateCreated datePublished" datetime="2020-03-10T10:47:01+08:00">2020-03-10</time>
+            </span>
+
+          
+            <div class="post-description">数学函数、字符和字符串</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h4 id="1-常用数学函数-Math类"><a href="#1-常用数学函数-Math类" class="headerlink" title="1 常用数学函数 ( Math类 )"></a>1 常用数学函数 ( Math类 )</h4><p><strong>1.1 三角函数方法</strong> (8个)</p>
+<script type="math/tex; mode=display">\begin{array}{l|l}
+\hline
+方法 & 描述 \\
+\hline
+sin(radians) & 返回以弧度为单位的三角正弦函数值 \\
+\hline
+cos(radians) & 返回以弧度为单位的三角余弦函数值 \\
+\hline
+tan(radians) & 返回以弧度为单位的三角正切函数值 \\
+\hline
+toRadians(degree) & 将以度为单位的角度值转换为以弧度表示 \\
+\hline
+toDegree(radians) & 将以弧度为单位的角度值转换为以度表示 \\
+\hline
+asin(a) & 返回以弧度为单位的反三角正弦函数值 \\
+\hline
+asin(a) & 返回以弧度为单位的反三角正弦函数值 \\
+\hline
+asin(a) & 返回以弧度为单位的反三角正弦函数值 \\
+\hline
+\end{array}</script><p><strong>1.2 指数函数方法</strong> (5个)</p>
+<script type="math/tex; mode=display">\begin{array}{l|l}
+\hline
+方法 & 描述 \\
+\hline
+exp(x) & 返回~e~的~x~的次方~(e^x)  \\
+\hline
+log(x) & 返回~x~的自然对数~(lnx=log_ex)  \\
+\hline
+log10(x) & 返回以~10~为底的对数~(log_{10}x) \\
+\hline
+pow(a,~b) & 返回~a~的~b~次方~(a^b) \\
+\hline
+sqrt & 对于~x\geq0~的数字，返回~x~的平方 \\
+\hline
+\end{array}</script><p><strong>1.3 取整方法</strong> (4个)</p>
+<script type="math/tex; mode=display">\begin{array}{l|l}
+\hline
+方法 & 描述 \\
+\hline
+ceil(x) & x~向上取整为它最接近的整数。该整数作为一个双精度返回 \\
+\hline
+floor(x)& x~向下取整为它最接近的整数。该整数作为一个双精度返回 \\
+\hline
+rint(x )& x~向上取整为它最接近的整数。如果~x~与两个整数距离相等，\\&偶数的整数作为一个双精度值返回 \\
+\hline
+round(x) & 如果~x~是单精度数，返回~(int)Math.floor(x+0.5)；如果 \\
+& 是双精度数，返回(long)Math.floor(x+0.5) \\
+\hline
+\end{array}</script><p><strong>1.4 min、max和abs方法</strong><br>min和max方法用于返回两个数(int、long、float、或double型)的最小值和最大值</p>
+<p>abs方法返回一个数(int、long、float、或double型)的绝对值</p>
+<p><strong>1.5 random方法</strong><br>生成一个 [0, 1) 的double型随机数。可用于生成任意范围的随机数</p>
+<p><strong>Math类在java.lang包中，其中所有的类都是隐式导入的</strong></p>
+<h4 id="2-字符数据类型和操作"><a href="#2-字符数据类型和操作" class="headerlink" title="2 字符数据类型和操作"></a>2 字符数据类型和操作</h4><p><strong>2.1特殊字符的转义序列</strong></p>
+<script type="math/tex; mode=display">\begin{array}{c|c}
+\hline
+转义序列 & 名称 \\
+\hline
+\text{\b} & 退格键 \\
+\hline
+\text{\t} & Tab键 \\
+\hline
+\text{\n} & 换行符 \\
+\hline
+\text{\f} & 换页符 \\
+\hline
+\text{\r} & 回车符 \\
+\hline
+\text{\\} & 反斜杠 \\
+\hline
+\text{\"} & 双引号 \\
+\hline
+\end{array}</script><p><strong>2.2 字符型数据与数据型数据之间的转换</strong><br>char 型数据可以转换成任意一种数值类型，反之亦然<br>(1)整数 — char：只用到该数据的低十六位，其余部分忽略<br><code>char ch = (char)0XAB0041; // 0041 is assigned</code><br>(2)浮点值 — char：首先将浮点值转换成 int 型，然后再将这个整型值转换为 char 型<br><code>char ch = (char)65.25; // Decimal 65 is assigned, ch is A</code><br>(3)char — 数值型：这个字符的 Unicode 就被转换成某个指定的数值类型<br><code>int i = (int)&#39;A&#39;; // i is 65</code><br>这种隐式转换只能在转换结果适用于目标变量情况下(0 ~ FFFF的任何一个十六进制整数)；否则必须显式转换<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">byte</span> b = <span class="string">'a'</span>;</span><br><span class="line"><span class="keyword">int</span> i = <span class="string">'a'</span>; <span class="comment">// Right</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">byte</span> b = <span class="string">'\uFFF4'</span>; <span class="comment">// Wrong, \uFFF4超过了一个字节范围</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>2.3 字符的比较和测试(Character类)</strong> (7个)<br>两个字符的比较是通过比较两个字符的Unicode值实现的</p>
+<script type="math/tex; mode=display">\begin{array}{l|l}
+\hline
+方法 & 描述 \\
+\hline
+isDigit(ch) & 如果指定的字符是一个数字，返回true \\
+\hline
+isLetter(ch )& 如果指定的字符是一个字母，返回true \\
+\hline
+isLetterOrDigit(ch) & 如果指定的字符是一个字母或数字，返回true \\
+\hline
+isLowerCase(ch) & 如果指定的字符是一个小写字母，返回true \\
+\hline
+isUpperCase(ch) & 如果指定的字符是一个大写字母，返回true \\
+\hline
+toLowerCase(ch) & 返回指定字符的小写形式 \\
+\hline
+toUpperCase(ch) & 返回指定字符的大写形式 \\
+\hline
+\end{array}</script><h4 id="3-String类型"><a href="#3-String类型" class="headerlink" title="3 String类型"></a>3 String类型</h4><p><strong>String与System类和Scanner类一样，都是Java库中预定义的类。String类型不是基本类型，而是引用类型(reference type)，任何Java类都能作为引用类型来声明一个变量。
+</strong>3.1 String对象的简单方法**(6个)</p>
+<script type="math/tex; mode=display">\begin{array}{l|l}
+\hline
+方法 & 描述 \\
+\hline
+length() & 返回字符串中的字符数 \\
+\hline
+charAt(index) & 返回字符串中指定位置的字符 \\
+\hline
+concat(s1) & 将本字符串和字符串 s1 连接，返回一个新字符串 \\
+\hline
+toUpperCase() & 返回一个新字符串，其中所有字母大写 \\
+\hline
+toLowerCase() & 返回一个新字符串，其中所有字母小写 \\
+\hline
+trim() & 返回一个新字符串，去掉了两边的空白字符(\text{'~'、\t、\f、\r或者\n}) \\
+\hline
+\end{array}</script><p><strong>3.2 Java允许在不创建新变量的情况下，使用字符串字面值直接引用字符串</strong><br><code>&quot;Welcome to Java&quot;.length()</code>是正确的</p>
+<p><strong>3.3 字符串连接</strong><br>如果 i = 1, j = 2<br><code>System.out.println(&quot;i + j is &quot; + i + j) // &quot;i + j is &quot;首先和 i 的值连接</code><br>输出为<br><code>i + j is 12</code><br><code>System.out.println(&quot;i + j is &quot; + (i + j))</code><br>输出才是<br><code>i + j is 3</code></p>
+<p><strong>3.4 从控制台读取字符串</strong><br>(1)调用Scanner 对象上的 next() 方法读取以空白字符结束的字符串<br>(2)用 nextLine() 方法读取一整行文本，以按下回车键为结束标志<br>(3)next()、nextByte()、nextShort()、nextInt()、nextLong()、nextFloat()和nextDouble()的输入称为<strong>基于标记的输入</strong>，因为它们读取采用空白字符分隔的单个元素，而不是整行。nextLine()方法称为<strong>基于行的输入</strong><br>(4)为避免输入错误，程序中不要在基于标记的输入后使用基于行的输入</p>
+<p><strong>3.5 字符串比较</strong>(7个)</p>
+<script type="math/tex; mode=display">\begin{array}{l|l}
+\hline
+方法 & 描述 \\
+\hline
+equals(s1) & 如果该字符串等于字符串s1，返回true \\
+\hline
+equalsIgnoreCase(s1) & 如果该字符串等于字符串s1，返回true;不区分大小写 \\
+\hline
+compareTo(s1) & 返回一个大于0、等于0、小于0的整数，表明该字符串 \\
+& 是大于、等于或小于s1 \\
+\hline
+compareToIgnoreCase(s1) & 和compareTo一样，只是不区分大小写 \\
+\hline
+startWith(prefix) & 如果字符串以特定前缀开始，返回true \\
+\hline
+endWith(suffix) & 如果字符串以特定后缀结束，返回true \\
+\hline
+contains(s1) & 如果s1是该字符串的子串，返回true \\
+\hline
+\end{array}</script><p>(1)使用操作符 == 只能检测 s1 和 s2是否指向同一个对象，而不能比较内容是否相同<br>(2)compareTo 返回的值是依据 s1 和 s2从左到右第一个不同字符之间的距离得出的</p>
+<p><strong>3.6 获取子字符串</strong> (2个)</p>
+<script type="math/tex; mode=display">\begin{array}{l|l}
+\hline
+方法 & 描述 \\
+\hline
+substring(beginIndex) & 返回该字符串从beginIndex的字符开始到字符串结尾 \\
+&的子串 \\
+\hline
+& 返回该字符串总指定位置beginIndex的字符开始到下标为 \\
+substring(beginIndex, endIndex)
+& endIndex-1的字符。其中，位于endIndex位置的字符不 \\
+& 属于该字符串的一部分  \\
+\hline
+\end{array}</script><p><strong>3.7 获取字符串中的字符或子串</strong> (8个)</p>
+<script type="math/tex; mode=display">\begin{array}{l|l}
+\hline
+方法 & 描述 \\
+\hline
+indexOf(ch) & 返回字符串中出现的第一个ch的下标。如果没有匹配的，返回-1 \\
+\hline
+indexOf(ch, fromIndex) & 返回字符串中fromIndex之后出现的第一个ch的下标。\\
+& 如果没有匹配的，返回-1 \\
+\hline
+indexOf(s) & 返回字符串中出现的第一个字符串s的下标。如果没有匹配的，返回-1 \\
+\hline
+indexOf(s, fromIndex) & 返回字符串中fromIndex之后出现的第一个字符串s的 \\
+& 下标。如果没有匹配的，返回-1 \\
+\hline
+lastIndexOf(ch) & 返回字符串中出现的最后一个ch的下标。如果没有匹配的，返 \\
+& 回-1 \\
+\hline
+lastIndexOf(ch, fromIndex) & 返回字符串中fromIndex之前出现的最后一个ch \\
+& 的下标。如果没有匹配的，返回-1 \\
+\hline
+lastIndexOf(s) & 返回字符串中出现的最后一个字符串s的下标。如果没有匹配的，\\
+& 返回-1 \\
+\hline
+lastIndexOf(s, fromIndex) & 返回字符串中fromIndex之前出现的最后一个字符 \\
+& 串s的下标。如果没有匹配的，返回-1 \\
+\hline
+\end{array}</script><p><strong>3.8 字符串和数字之间的转换</strong><br>(1)字符串 — int<br><code>int intValue = Integer.parseInt(intString);</code><br>(2)字符串 — double<br><code>double doubleValue = Double.parseDouble(doubleString);</code><br>(3)使用简单的字符串的连接操作符<br><code>String s = number + &quot;&quot;</code></p>
+<h4 id="格式化控制台输出"><a href="#格式化控制台输出" class="headerlink" title="格式化控制台输出"></a>格式化控制台输出</h4><p><strong>使用System.out.printf 方法在控制台上显示格式化输出</strong><br>常用格式限定符(6个)</p>
+<script type="math/tex; mode=display">\begin{array}{l|l|l}
+\hline
+限定符 & 输出 & 举例 \\
+\hline
+\% b & 布尔值 & \text{true或false} \\
+\hline
+\% c & 字符 & \text{'a'} \\
+\hline
+\% d & 十进制整数 &200 \\
+\hline
+\% f & 浮点数 &45.460000 \\
+\hline
+\% e & 标准科学计数法形式的数 & 4.556 000e+01 \\
+\hline
+\% s & 字符串 & "Java~is~cool" \\
+\hline
+\end{array}</script><p>指定宽度和精度的例子</p>
+<script type="math/tex; mode=display">\begin{array}{l|l}
+\hline
+举例 & 输出 \\
+\hline
+\% 5c & 输出字符并在前面加4个空格 \\
+\hline
+\% 6b & 输出布尔值，在false前面加一个空格，true前面加两个空格 \\
+\hline
+\% 5d & 输出宽度至少为5的整数项。若数字位小于5，则在数字前加空 \\
+& 格。若该条目位数大于5，则自动增加宽度 \\
+\hline
+\% 10.2f & 输出的浮点数项宽度至少为10，包括小数点和小数点后的两位 \\
+&数字，少了补空格，多了自动增宽 \\
+\hline
+\% 10.2e & 输出的浮点数项宽度至少为10，包括小数点和小数点后的两位 \\
+&数字和指数部分，按科学计数法显示的数字位数小于10补空格 \\
+\hline
+\% 12s & 输出的字符串宽度至少为12个字符，少了补空格，多了自动增宽 \\
+\hline
+\end{array}</script><p><strong>默认情况下，输出是右对齐的。可以在格式限定符中放一个减号(-)，指定域中的输出是左对齐的</strong></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Java/" rel="tag"># Java</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/03/07/Cryptography1/" rel="prev" title="Cryptography1">
+      <i class="fa fa-chevron-left"></i> Cryptography1
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-常用数学函数-Math类"><span class="nav-number">1.</span> <span class="nav-text">1 常用数学函数 ( Math类 )</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-字符数据类型和操作"><span class="nav-number">2.</span> <span class="nav-text">2 字符数据类型和操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-String类型"><span class="nav-number">3.</span> <span class="nav-text">3 String类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#格式化控制台输出"><span class="nav-number">4.</span> <span class="nav-text">格式化控制台输出</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.1
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
