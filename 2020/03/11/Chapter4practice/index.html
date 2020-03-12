@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="基于Java学习笔记(三)的13道练习题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java学习练习题(三)">
+<meta property="og:url" content="http://yoursite.com/2020/03/11/Chapter4practice/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="基于Java学习笔记(三)的13道练习题">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-11T13:19:10.000Z">
+<meta property="article:modified_time" content="2020-03-12T10:29:12.962Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/03/11/Chapter4practice/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>Java学习练习题(三) | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-right"></div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/11/Chapter4practice/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Java学习练习题(三)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-03-11 21:19:10" itemprop="dateCreated datePublished" datetime="2020-03-11T21:19:10+08:00">2020-03-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-03-12 18:29:12" itemprop="dateModified" datetime="2020-03-12T18:29:12+08:00">2020-03-12</time>
+              </span>
+
+          
+            <div class="post-description">基于Java学习笔记(三)的13道练习题</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>1.<em>(几何：最大圆距离)</em>最大圆距离是指球面上两个点之间的距离。假设(x1, y1)和(x2, y2)是两个点的地理经纬度。两个点之间的最大圆距离可以使用以下公式计算：</p>
+<script type="math/tex; mode=display">d=半径\times\arccos(\sin(x1)\times\sin(x2)+\cos(x1)\times\cos(x2)\times\cos(y1-y2))</script><p>编写一个程序，提示用户输入以度为单位的地球上的两个点的经纬度，显示其最大圆距离值。地球的平均半径为6 371.01km。注意，你需要使用<code>Math.toRadians</code>方法将度转换为弧度值。公式中的经纬度是相对北边和西边的，使用负数表示相对南边和东边的度数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MaxCircleDistance</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">final</span> <span class="keyword">double</span> RADIUS = <span class="number">6371.01</span>;	<span class="comment">// Constant</span></span><br><span class="line"></span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">		System.out.print(<span class="string">"Enter point 1 (latitude and longitude) in degrees: "</span>);</span><br><span class="line">		<span class="keyword">double</span> lat1 = input.nextDouble();</span><br><span class="line">		<span class="keyword">double</span> longti1 = input.nextDouble();</span><br><span class="line">		<span class="keyword">double</span> x1 = Math.toRadians(lat1);</span><br><span class="line">		<span class="keyword">double</span> y1 = Math.toRadians(longti1);</span><br><span class="line">		System.out.print(<span class="string">"Enter point 1 (latitude and longitude) in degrees: "</span>);</span><br><span class="line">		<span class="keyword">double</span> lat2 = input.nextDouble();</span><br><span class="line">		<span class="keyword">double</span> longti2 = input.nextDouble();</span><br><span class="line">		<span class="keyword">double</span> x2 = Math.toRadians(lat2);</span><br><span class="line">		<span class="keyword">double</span> y2 = Math.toRadians(longti2);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">double</span> d = RADIUS * Math.acos(Math.sin(x1) * Math.sin(x2) +</span><br><span class="line">				Math.cos(x1) * Math.cos(x2) * Math.cos(y1 - y2));</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"The distance between the two points is "</span> + d);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.<em>(几何：六边形面积)</em> 六边形面积可以通过下面公式计算(s是边长)：</p>
+<script type="math/tex; mode=display">面积=\frac{6\times s^2}{4\times\tan(\frac{\pi}{6})}</script><p>编写程序，提示用户输入六边形边长，然后显示它的面积</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HexagonalArea</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Prompt the user to enter the length</span></span><br><span class="line">		System.out.print(<span class="string">"Enter the sides: "</span>);</span><br><span class="line">		<span class="keyword">double</span> sides = input.nextDouble();</span><br><span class="line"></span><br><span class="line">		<span class="keyword">double</span> area = (<span class="number">6</span> * Math.pow(sides, <span class="number">2</span>)) / (<span class="number">4</span> * Math.tan(Math.PI / <span class="number">6</span>));</span><br><span class="line"></span><br><span class="line">		System.out.printf(<span class="string">"The area of the hexagon is "</span> + (<span class="keyword">int</span>)(area * <span class="number">100</span>) / <span class="number">100.0</span>);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3.<em>(圆上的随机点)</em> 编写程序，产生一个圆心位于(0, 0)、半径为40的圆上面的三个随机点，显示由三个随机点组成的三个角的度数(提示：产生 $[~0,~2\pi~]$ 之间的一个以弧度为单位的随机角度 $\alpha$，则这个角度所确定的点为</p>
+<p>$r<em>\cos(\alpha),~r</em>\sin(\alpha)$)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RandomPointOnCircle</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Generate three random angles</span></span><br><span class="line">		<span class="keyword">double</span> A = Math.random() * ((<span class="number">2</span> * Math.PI) + <span class="number">1</span>);</span><br><span class="line">		<span class="keyword">double</span> B = Math.random() * ((<span class="number">2</span> * Math.PI) + <span class="number">1</span>);</span><br><span class="line">		<span class="keyword">double</span> C = Math.random() * ((<span class="number">2</span> * Math.PI) + <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"Three angles are: "</span> + Math.round(Math.toDegrees(A)) +</span><br><span class="line">			<span class="string">","</span> + Math.round(Math.toDegrees(B)) + <span class="string">","</span> + Math.round(Math.toDegrees(C)));</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>4.<em>(给出ASCII码对应的字符)</em> 编写一个程序，得到一个ASCII码的输入(0 ~ 127之间的一个整数)，然后显示该字符</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IntToChar</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">		System.out.print(<span class="string">"Enter an ASCII code: "</span>);</span><br><span class="line">		<span class="keyword">int</span> x = input.nextInt();</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"The character for ASCII code "</span> + x + <span class="string">" is "</span> + (<span class="keyword">char</span>)x);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>5.<em>(猜测生日)</em> 通过询问朋友生日是否在这五个集合中找到他出生在哪一天，Y表示“是”，“N”表示“否”</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GuessBirthday</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		String set1 = <span class="string">" 1 3 5 7\n"</span> +</span><br><span class="line">					  <span class="string">" 9 11 13 15\n"</span> +</span><br><span class="line">					  <span class="string">"17 19 21 23\n"</span> +</span><br><span class="line">					  <span class="string">"25 27 29 31"</span>;</span><br><span class="line"></span><br><span class="line">		String set2 = <span class="string">" 2 3 6 7\n"</span> +</span><br><span class="line">					  <span class="string">"10 11 14 15\n"</span> +</span><br><span class="line">					  <span class="string">"18 19 22 23\n"</span> +</span><br><span class="line">					  <span class="string">"26 27 30 31"</span>;</span><br><span class="line"></span><br><span class="line">		String set3 = <span class="string">" 4 5 6 7\n"</span> +</span><br><span class="line">					  <span class="string">"12 13 14 15\n"</span> +</span><br><span class="line">					  <span class="string">"20 21 22 23\n"</span> +</span><br><span class="line">					  <span class="string">"28 29 30 31"</span>;</span><br><span class="line"></span><br><span class="line">		String set4 = <span class="string">"8 9 10 11\n"</span> +</span><br><span class="line">					  <span class="string">"12 13 14 15\n"</span> +</span><br><span class="line">					  <span class="string">"24 25 26 27\n"</span> +</span><br><span class="line">					  <span class="string">"28 29 30 31"</span>;</span><br><span class="line"></span><br><span class="line">		String set5 = <span class="string">"16 17 18 19\n"</span> +</span><br><span class="line">					  <span class="string">"20 21 22 23\n"</span> +</span><br><span class="line">					  <span class="string">"24 25 26 27\n"</span> +</span><br><span class="line">					  <span class="string">"28 29 30 31"</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> day = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Create a Scanner</span></span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Prompt the user to answer questions</span></span><br><span class="line">		System.out.println(<span class="string">"Is your birthday in set1?"</span>);</span><br><span class="line">		System.out.println(set1);</span><br><span class="line">		System.out.print(<span class="string">"Enter N for No and Y for Yes: "</span>);</span><br><span class="line">		String answer = input.next();</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (answer.equals(<span class="string">"Y"</span>))</span><br><span class="line">			day += <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Prompt the user to answer questions</span></span><br><span class="line">		System.out.println(<span class="string">"\nIs your birthday in set2?"</span>);</span><br><span class="line">		System.out.println(set2);</span><br><span class="line">		System.out.print(<span class="string">"Enter N for No and Y for Yes: "</span>);</span><br><span class="line">		answer = input.next();</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (answer.equals(<span class="string">"Y"</span>))</span><br><span class="line">			day += <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Prompt the user to answer questions</span></span><br><span class="line">		System.out.println(<span class="string">"\nIs your birthday in set3?"</span>);</span><br><span class="line">		System.out.println(set3);</span><br><span class="line">		System.out.print(<span class="string">"Enter N for No and Y for Yes: "</span>);</span><br><span class="line">		answer = input.next();</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (answer.equals(<span class="string">"Y"</span>))</span><br><span class="line">			day += <span class="number">4</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Prompt the user to answer questions</span></span><br><span class="line">		System.out.println(<span class="string">"\nIs your birthday in set4?"</span>);</span><br><span class="line">		System.out.println(set4);</span><br><span class="line">		System.out.print(<span class="string">"Enter N for No and Y for Yes: "</span>);</span><br><span class="line">		answer = input.next();</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (answer.equals(<span class="string">"Y"</span>))</span><br><span class="line">			day += <span class="number">8</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Prompt the user to answer questions</span></span><br><span class="line">		System.out.println(<span class="string">"\nIs your birthday in set5?"</span>);</span><br><span class="line">		System.out.println(set5);</span><br><span class="line">		System.out.print(<span class="string">"Enter N for No and Y for Yes: "</span>);</span><br><span class="line">		answer = input.next();</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (answer.equals(<span class="string">"Y"</span>))</span><br><span class="line">			day += <span class="number">16</span>;</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"\nYour birthday is "</span> + day + <span class="string">" !"</span>);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>6.<em>(十六进制转二进制)</em> 编写一个程序，提示用户输入一个十六进制数，显示其对应的二进制数。对于不正确的输入数字，提示非法输入</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HexToBinary</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Prompt the user to enter a number in hex</span></span><br><span class="line">		System.out.print(<span class="string">"Enter a hex digit: "</span>);</span><br><span class="line">		String hex = input.next();</span><br><span class="line">		<span class="keyword">char</span> ch = hex.charAt(<span class="number">0</span>);</span><br><span class="line">		<span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">int</span>[] dicimal = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">4</span>];</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (hex.length()!=<span class="number">1</span> || ch &gt; <span class="string">'F'</span> || ch &lt; <span class="string">'A'</span>)</span><br><span class="line">			System.out.println(hex + <span class="string">" is an invalid input"</span>);</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> (Character.isDigit(ch))</span><br><span class="line">				temp = Integer.parseInt(hex);</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				temp = (<span class="keyword">int</span>)ch - <span class="number">55</span>;</span><br><span class="line"><span class="comment">//				System.out.println(temp);</span></span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">3</span>;i &gt;= <span class="number">0</span>;i--) &#123;</span><br><span class="line">				dicimal[i] = temp % <span class="number">2</span>;</span><br><span class="line">				temp /= <span class="number">2</span>;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			System.out.print(<span class="string">"The binary value is "</span>);</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="number">4</span>;i++)</span><br><span class="line">				System.out.print(dicimal[i]);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>7.<em>(转换字母等级为数字)</em> 提示用户输入一个字母等级A、B、C、D或F，显示对应的数字值4、3、2、1或0.对于其他输入，提示非法等级</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Classify</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">		System.out.print(<span class="string">"Enter a letter grade: "</span>);</span><br><span class="line">		String grade = input.next();</span><br><span class="line">		<span class="keyword">char</span> ch = grade.charAt(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (ch &lt; <span class="string">'A'</span> || ch &gt; <span class="string">'F'</span> || grade.length() != <span class="number">1</span>)</span><br><span class="line">			System.out.println(grade + <span class="string">" is an invalid grade"</span>);</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			System.out.print(<span class="string">"The numeric value for grade "</span> + ch + <span class="string">" is "</span>);</span><br><span class="line">			<span class="keyword">int</span> num = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">switch</span> (ch) &#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'A'</span>: num = <span class="number">4</span>; <span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'B'</span>: num = <span class="number">3</span>; <span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'C'</span>: num = <span class="number">2</span>; <span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'D'</span>: num = <span class="number">1</span>; <span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'E'</span>: num = <span class="number">0</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println(num);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>8.<em>(随机字符)</em> 使用<code>Math.random()</code>方法显示一个随机的大写字母</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RandomCapitalCharacter</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> random = (<span class="keyword">int</span>)(Math.random() * <span class="number">26</span> + <span class="number">65</span>);</span><br><span class="line"></span><br><span class="line">		System.out.println((<span class="keyword">char</span>)random);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>9.<em>(学生的专业和年级)</em> 编写一个程序，提示用户输入两个字符，显示这两个字符代表的专业以及年级。第一个字符表示专业，第二个是一个数字字符1、2、3、4，分别代表学生是大一、大二、大三还是大四。假设这些字符用于表示专业：</p>
+<p>M：数学</p>
+<p>C：计算机科学</p>
+<p>I：信息技术</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MajorAndGrade</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">		System.out.print(<span class="string">"Enter two characters: "</span>);</span><br><span class="line">		String str = input.next();</span><br><span class="line"></span><br><span class="line">		<span class="keyword">char</span> ch1 = str.charAt(<span class="number">0</span>);</span><br><span class="line">		<span class="keyword">char</span> ch2 = str.charAt(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">		String major = <span class="string">""</span>;</span><br><span class="line">		String grade = <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (<span class="string">"MCI"</span>.indexOf(ch1) == -<span class="number">1</span> || <span class="string">"1234"</span>.indexOf(ch2) == -<span class="number">1</span> || str.length() != <span class="number">2</span>)</span><br><span class="line">			System.out.println(<span class="string">"Invalid input"</span>);</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">switch</span> (ch1) &#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'M'</span>: major = <span class="string">"Mathematics"</span>; <span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'C'</span>: major = <span class="string">"Computer Science"</span>; <span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'I'</span>: major = <span class="string">"Information Technology"</span>;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">switch</span> (ch2) &#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'1'</span>: grade = <span class="string">"Freshman"</span>; <span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'2'</span>: grade = <span class="string">"Sophomore"</span>; <span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'3'</span>: grade = <span class="string">"Junior"</span>; <span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'4'</span>: grade = <span class="string">"Senior"</span>;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			System.out.println(major + <span class="string">" "</span> + grade);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>10.<em>(字符串处理)</em> 提示用户输入一个字符串，显示它的长度和第一个字符</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringDispose</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">		System.out.print(<span class="string">"Enter a string: "</span>);</span><br><span class="line">		String str = input.next();</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"The length is "</span> + str.length() + <span class="string">", and the first character is "</span> + str.charAt(<span class="number">0</span>));</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>11.<em>(检查子串)</em> 提示用户输入两个字符串，检测第二个字符串是否是第一个字符串的子串</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CheckSubstring</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">		System.out.print(<span class="string">"Enter string s1: "</span>);</span><br><span class="line">		String s1 = input.next();</span><br><span class="line">		System.out.print(<span class="string">"Enter string s2: "</span>);</span><br><span class="line">		String s2 = input.next();</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (s1.indexOf(s2) == -<span class="number">1</span>)</span><br><span class="line">			System.out.println(s2 + <span class="string">" is not a substring of "</span> + s1);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			System.out.println(s2 + <span class="string">" is a substring of "</span> + s1);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>12.<em>(对三个城市排序)</em> 提示用户输入三个城市名称，然后以升序进行显示</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SortCities</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">		System.out.print(<span class="string">"Enter the first city: "</span>);</span><br><span class="line">		String c1 = input.nextLine();</span><br><span class="line">		System.out.print(<span class="string">"Enter the second city: "</span>);</span><br><span class="line">		String c2 = input.nextLine();</span><br><span class="line">		System.out.print(<span class="string">"Enter the third city: "</span>);</span><br><span class="line">		String c3 = input.nextLine();</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (c1.compareTo(c2) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">			String temp = c1;</span><br><span class="line">			c1 = c2;</span><br><span class="line">			c2 = temp;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (c2.compareTo(c3) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">			String temp = c2;</span><br><span class="line">			c2 = c3;</span><br><span class="line">			c3 = temp;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (c1.compareTo(c2) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">			String temp = c1;</span><br><span class="line">			c1 = c2;</span><br><span class="line">			c2 = temp;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"The three cities in alphabetical order are "</span> + c1 + <span class="string">" "</span> + c2 + <span class="string">" "</span> + c3);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>13.<em>(金融应用：货币单位)</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ComputeChange</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//Create a Scanner</span></span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">		<span class="comment">//Receive the amount</span></span><br><span class="line">		System.out.print(<span class="string">"Enter an amount in string, for example 11.56: "</span>);</span><br><span class="line">		String amount = input.next();</span><br><span class="line">		<span class="keyword">int</span> separate = amount.indexOf(<span class="string">"."</span>);</span><br><span class="line">		<span class="keyword">int</span> dollar = Integer.parseInt(amount.substring(<span class="number">0</span>,separate));</span><br><span class="line">		<span class="keyword">int</span> cent = Integer.parseInt(amount.substring(separate + <span class="number">1</span>, amount.length()));</span><br><span class="line"><span class="comment">//		System.out.println(cent);</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> remainingAmount = cent;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//Find the number of one dollars</span></span><br><span class="line">		<span class="keyword">int</span> numberOfOneDollars = dollar;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//Find the number of quarters in the remaining amount</span></span><br><span class="line">		<span class="keyword">int</span> numberOfQuarters = remainingAmount / <span class="number">25</span>;</span><br><span class="line">		remainingAmount %= <span class="number">25</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//Find the number of dimes in the remaining amount</span></span><br><span class="line">		<span class="keyword">int</span> numberOfDimes = remainingAmount / <span class="number">10</span>;</span><br><span class="line">		remainingAmount %= <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//Find the number of nickels in the remaining amount</span></span><br><span class="line">		<span class="keyword">int</span> numberOfNickels = remainingAmount / <span class="number">5</span>;</span><br><span class="line">		remainingAmount %= <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//Find the number of pennies in the remaining amount</span></span><br><span class="line">		<span class="keyword">int</span> numberOfPennies = remainingAmount;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//Display results</span></span><br><span class="line">		System.out.println(<span class="string">"Your amount "</span> + amount + <span class="string">" consists of"</span>);</span><br><span class="line">		System.out.println(<span class="string">" "</span> + numberOfOneDollars + <span class="string">" dollars"</span>);</span><br><span class="line">		System.out.println(<span class="string">" "</span> + numberOfQuarters + <span class="string">" quarters"</span>);</span><br><span class="line">		System.out.println(<span class="string">" "</span> + numberOfDimes + <span class="string">" dimes"</span>);</span><br><span class="line">		System.out.println(<span class="string">" "</span> + numberOfNickels + <span class="string">" nickels"</span>);</span><br><span class="line">		System.out.println(<span class="string">" "</span> + numberOfPennies + <span class="string">" pennies"</span>);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Java/" rel="tag"># Java</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/03/10/Chapter4/" rel="prev" title="Java学习笔记(三)">
+      <i class="fa fa-chevron-left"></i> Java学习笔记(三)
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.1
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
