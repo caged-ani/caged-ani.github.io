@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="整除的相关定义及定理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cryptography1">
+<meta property="og:url" content="http://yoursite.com/2020/03/07/Cryptography1/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="整除的相关定义及定理">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-07T01:21:10.000Z">
+<meta property="article:modified_time" content="2020-03-09T14:49:27.796Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Fundamentals of cryptography">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/03/07/Cryptography1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>Cryptography1 | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-right"></div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/07/Cryptography1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Cryptography1
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-03-07 09:21:10" itemprop="dateCreated datePublished" datetime="2020-03-07T09:21:10+08:00">2020-03-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-03-09 22:49:27" itemprop="dateModified" datetime="2020-03-09T22:49:27+08:00">2020-03-09</time>
+              </span>
+
+          
+            <div class="post-description">整除的相关定义及定理</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h4 id="1-1-整除"><a href="#1-1-整除" class="headerlink" title="1.1 整除"></a>1.1 整除</h4><p><strong>定义1.1 整除(division)</strong><br>设 $a, b$ 为整数，$b \ne 0$。若一整数使得 $a = bq$，则称 $b$ 整除 $a$ 或 $a$ 能被 $b$ 整除，记为 $b\mid a$，$b$ 叫做 $a$ 的因数，$a$ 叫做 $b$ 的倍数。若 $b$ 不能整除 $a$，记为 $b\nmid a$。</p>
+<p><strong>定理1.1 整除的性质</strong>   $\forall a, b\in Z$,</p>
+<script type="math/tex; mode=display">\begin{align*}
+& (1) a\mid b \Leftrightarrow -a\mid b \Leftrightarrow a\mid -b \Leftrightarrow -a\mid -b \Leftrightarrow \left\vert a \right\vert \mid \left\vert b \right\vert \\
+& (2) a\mid b,b\mid c \Rightarrow a\mid c \\
+& (3) a\mid b,b\mid a \Rightarrow a = \pm b \\
+& (4) a\mid b,a\mid c \Leftrightarrow \forall t, s\in Z, a\mid {tb + sc} \\
+& \text{扩展：} \\
+& (1) \text{ $\exists s, t\in Z$ 使得 $sa+sb=1$情况下， 若有 $n\in Z, a\mid n, b\mid n$，则有 $ab\mid n$} \\
+& (2)\text{ $\exists s, t\in Z$ 使得 $sa+sb=1$情况下， 若有 $n\in Z, m\mid a, m\mid b$，则有 $m=\pm1$} \\
+& (3)\forall p,q\in Z, \text{若 $m$ 为奇数}，p\pm q\mid p^m\pm q^m \\
+& (4)\forall p,q\in Z, \text{若 $m$ 为偶数}，p-q\mid p^m- p^m\text{成立}，p+q\mid p^m+q^m\text{不一定成立}
+\end{align*}</script><p><strong>定义1.2 素数(prime)</strong><br>一个大于 1 且只能被 1 和它本身整除的数，称为素数(或质数，不可约数)；否则称为合数。正整数几何分为三类：素数、合数和 1；素数常用 $p$ 来表示</p>
+<p><strong>定理1.2 欧几里得除法(Euclid除法，带余除法)</strong></p>
+<script type="math/tex; mode=display">\forall a,b\in Z,b\ne0, \text{则唯一存在两个整数}~q,~r，\text{使得下式成立}：\\
+a=bq+r, 0 \leqq r < \left\vert b \right\vert</script><p><strong>推论1.1</strong> 显然，若 $a=bq+r$,则 $b\mid a \Leftrightarrow r=0$。</p>
+<p><strong>定理1.3 整数的表示</strong><br>给定正整数 $b\geqq 2\text{则}~ \forall n\in Z, n$ 必可唯一表示为：</p>
+<script type="math/tex; mode=display">n=\sum_{k=0}^k a_ib^i</script><p>其中 $k, a_i\in Z, k\geqq0, 0\leqq a_i\leqq b(0\leqq i\leqq k), a_k\ne 0$。</p>
+<h4 id="1-2-最大公因数和最小公倍数"><a href="#1-2-最大公因数和最小公倍数" class="headerlink" title="1.2 最大公因数和最小公倍数"></a>1.2 最大公因数和最小公倍数</h4><p><strong>定义1.3 最大公因数(greatest common divisor)</strong><br>设 $a_1, a_2,\ldots,a_n$ 为 n 个不全为0的整数，如果整数 d 是其中每个数的因数，则称 d 为 $a_1, a_2,\ldots,a_n$ 的公因数(公约数)，所有公因数中最大的正整数称为最大公因数(最大公约数)，记为 <strong>$gcd(a_1, a_2,\ldots,a_n)$</strong>，简记为 $(a_1, a_2,\ldots,a_n)$<br>由于 0 可以被任何数整除，所以对任意整数 $a, (a,0)=\left\vert a\right\vert$。<br>如果 $(a_1, a_2,\ldots,a_n)=1$, 则称  $a_1, a_2,\ldots,a_n0$ 互素；如果 $a_1, a_2,\ldots,a_n$ 中任意两个数的最大公因数均为 1，则称它们两两互素。<br>注意，在不少于三个数的互素正整数中，不一定都两两互素。如 $(6, 10, 15)=1, \text{但} (6, 10)=2, (6, 15)=3, (10, 15)=5$</p>
+<p><strong>定义1.4 最小公倍数</strong><br>设 $a_1, a_2,\ldots,a_n$ 为 n 个不全为0的整数，如果整数 m 是其中每个数的倍数，则称 m 为 $a_1, a_2,\ldots,a_n$ 的公倍数，所有公倍数中最小的正整数称为最小公倍数，记为 $lcm(a_1, a_2,\ldots,a_n)$，简记为 $\left[ a_1, a_2,\ldots,a_n\right]$。</p>
+<p><strong>定理1.4</strong> 设 $a, b, c\in Z$，</p>
+<script type="math/tex; mode=display">\begin{align*}
+(1) & (a,b)=(b,a)=(-a, b),(a, -b)=(-a, -b), \\
+    & \left[ a,b \right]=\left[ b,a \right]=\left[ -a,b\ \right]=\left[ a,-b \right]=\left[ -a,-b \right] \\
+(2) & 若a\mid b，则(a,b)=\left\vert a\right\vert,[a,b]=|b|; \\
+(3) & 对\forall x\in Z,(a,b)=(a,ax+b); \\
+(4) & 对\forall x,y\in Z,(a,b)\mid ax+by。
+\end{align*}</script><p><strong>推论1.2</strong> $~\forall m, n\in Z,若 \exists x,y\in Z,使ax+by=1，则(a,b)\mid 1$</p>
+<p><strong>定理1.5</strong> $~\forall a, b, c\in Z,$</p>
+<script type="math/tex; mode=display">\begin{align*}
+& (1) a\mid b, b\mid c <=> [a, b]\mid c \\
+& (2) c\mid a, c\mid b <=> c\mid (a, b)
+\end{align*}</script><p>表明：公倍数一定是最小公倍数的倍数；公约数一定是最大公约数的约数</p>
+<p><strong>推论1.3</strong> $(a, b, c) = ((a, b), c); [a, b, c]=[[a, b], c]$</p>
+<p><strong>定理1.6</strong> $a, b, c\in Z,a,b,c\ne0,(a,c)=1$，则</p>
+<script type="math/tex; mode=display">(ab,c)=(b,c)</script><p><strong>推论1.4</strong> $设a,b,c\in Z,~a,b,c\ne0,~(a,c)=1,~c\mid ab，则c\mid b$</p>
+<p><strong>推论1.5</strong> $设a,b\in Z,~p为素数，p\mid ab，则~p\mid a~或~p\mid b$</p>
+<p><strong>定理1.7</strong> $\forall a,b,c\in Z,$</p>
+<script type="math/tex; mode=display">\begin{align*}
+& (1)若c>0,~(a,b)=d,~[a,b]=m,~则(ac,bc)=dc,~[ac,bc]=mc; \\
+& (2)若c>0,~(a,b)=d,~c\mid d,~则(a/c,b/c)=d/c; \\
+& (3)[a,b]=|ab|/(a,b)
+\end{align*}</script><h4 id="1-3-欧几里得算法-计算最大公约数"><a href="#1-3-欧几里得算法-计算最大公约数" class="headerlink" title="1.3 欧几里得算法(计算最大公约数)"></a>1.3 欧几里得算法(计算最大公约数)</h4><p>设有 $\forall a,b\in Z,~记~r_0=a,~r_1=b$，则反复使用欧几里得除法，有：</p>
+<script type="math/tex; mode=display">\begin{align*}
+& r_0=r_1q_1+r_2,~0\leqq r_2<r_1, \\
+& r_1=r_2q_2+r_3,~0\leqq r_3<r_2, \\
+& \cdots, \\
+& r_{n-2}=r_{n-1}q_{n-1}+r_n,~0\leqq r_n<r_{n-1}, \\
+& r_{n-1}=r_nq_n+r_{n+1},~r_{n+1}=0
+\end{align*}</script><p>经过有限步骤的计算，必然存在 $n\in Z，使得r_{n+1}=0$，这是因为</p>
+<script type="math/tex; mode=display">0=r_{n+1}<r_n<r_{n-1}<\ldots<r_2<r_1=b</script><p>根据定理1.4(3)，$(r_0,r_1)=(r_1,r_2)=\ldots=(r_n,r_{n+1})=(r_n,0)=r_n$</p>
+<p><strong>扩展的欧几里得算法</strong><br>由定理1.4(4)知，对 $\forall x,y\in Z,~有(a,b)\mid ax+by$，实际上</p>
+<script type="math/tex; mode=display">对~\forall a,b\in Z,~\exists x_0,y_0\in Z，使得(a,~b)=ax_0+by_0</script><p>这是由于 $(a,~b)=r_n=r_{n-2}-r_{n-1}q_{n-1}=r_{n-2}-(r_{n-3}-r_{n-2}q_{n-2})q_{n-1}=\ldots=ax_0+by_0$ 即 $(a,~b)$ 可以表示为 $a和b$ 的整系数线性组合，$x_0和y_0$ 称为线性表出系数。同时求出最大公约数和线性表出系数的算法称为扩展的欧几里得算法<br>迭代算法可表述为：</p>
+<script type="math/tex; mode=display">\begin{align*}
+& x_{i-1}=y_i,~y_{i-1}=x_i-[a_{i-1}/b_{i-1}]*y_i  \\
+或 & x_i=x_{i-2}-x_{i-1}*q_i,~y_i=y_{i-2}-y_{i-1}*q_i \\
+其中 & x_{-1}=1，x_0=0，y_{-1}=0，y_0=1
+\end{align*}</script><h4 id="1-4-二元一次方程"><a href="#1-4-二元一次方程" class="headerlink" title="1.4 二元一次方程"></a>1.4 二元一次方程</h4><p><strong>定理1.7 二元一次方程组有解的条件</strong><br>当 $a,~b$为不全为零的整数，$c\in Z$，则方程 $ax+by=c$ 有整数解 $&lt;=&gt;(a,~b)\mid c$</p>
+<p><strong>推论1.6 二元一次方程的解</strong><br>当 $a,~b$为不全为零的整数，$c\in Z，(a，b)\mid c$，方程 $ax+by=c$ 有特解 $x_0，y_0$,方程通解可表示为：$x=x_0+bt/(a，b)，t\in Z$</p>
+<h4 id="1-5-整数唯一分解定理"><a href="#1-5-整数唯一分解定理" class="headerlink" title="1.5 整数唯一分解定理"></a>1.5 整数唯一分解定理</h4><p><strong>定理1.8 整数唯一分解预备定理</strong><br>若 p 为素数，则整数 $a$ 不能被 p 整除 $&lt;=&gt;(p,~a)=1$</p>
+<p><strong>推论1.7</strong> 设 p 为素数，$a_1,~a_2,~\ldots,~a_n\in Z,~n\geq2,~如果p\mid \prod_{k=1}^n a_k，则\exists i\in Z，1\leq i\leq n，使得p\mid a_i$</p>
+<p><strong>定理1.9 整数唯一分解定理(算数基本定理)</strong><br>任意大于 1 的整数 n 都可以表示成素数的乘积，在不考虑顺序的情况下，该表达式是唯一。<br>即 $\forall n\in Z~有~n=\prod_{k=1}^s p_s，  其中 p_k(1\leq k\leq s) 是素数$；若 $n=\prod_{k=1}^t q_k，q_1&lt;q_2&lt;\ldots&lt;q_t，其中q_k(1&lt;k&lt;t)是素数$；则 $s=t，p_k=q_k$<br>将分解式 $n=\prod_{k=1}^s p_k$ 中相同的素数合并，即可得到：</p>
+<script type="math/tex; mode=display">n=\prod_{k=1}^s p_k^{\alpha_k}</script><p>其中 $p_k$ 是两两不同的素数，整数 $\alpha_k&gt;0，1\leq k\leq s$。上式称为整数 n 的标准分解式。</p>
+<p><strong>推论1.7</strong> 设 $n\in Z，n&gt;1$，且有标准分解式 $n=\prod_{k=1}^s p_k^{\alpha_k}$，其中 $p_k$ 是两两不同的素数，整数 $\alpha_k&gt;0，1\leq k\leq s$，则：$d\mid n &lt;=&gt; d=\prod_{k=1}^s p_k^{\beta_k}，\beta_k\leq\alpha_k，1\leq k\leq s$</p>
+<p><strong>定理1.10</strong> 设大于 1 的整数 $a=\prod_{k=1}^s p_k^{\alpha_k}，b=\prod_{k=1}^s p_k^{\beta_k}，其中p_k是两两不同的素数，整数\alpha_k\geq =0，\beta_k\geq =0，1\leq k\leq s$。则</p>
+<script type="math/tex; mode=display">\begin{align*}
+&(1) ab=\prod_{k=1}^s p_k^{\gamma_k}，其中\gamma_k=\alpha_k+\beta_k~(1\leq k\leq s); \\
+&(2) a\mid b<=>\alpha_k\leq \beta_k~(1\leq k\leq s); \\
+&(3)(a,~b)=\prod_{k=1}^s p_k^{\gamma_k}，其中\gamma_k=min(\alpha_k,\beta_k)~(1\leq k\leq s); \\
+&(4)[a,~b] = \prod_{k=1}^s p_k^{\gamma_k}，其中\gamma_k=max(\alpha_k,\beta_k)~(1\leq k\leq s);
+\end{align*}</script><h4 id="1-6-素数"><a href="#1-6-素数" class="headerlink" title="1.6 素数"></a>1.6 素数</h4><p><strong>定理1.11</strong> 素数有无穷多个</p>
+<p><strong>定理1.12 素数定理</strong></p>
+<script type="math/tex; mode=display">\lim_{x\to \infty} \frac{\pi(x)}{x\diagup \ln x}=1</script><p>其中 $x为正整数，\pi(x) 表示不超过 x 的素数的个数，\ln x 表示 x 的自然对数$。素数定理说明，素数在正整数集合中的分布是稀疏的。</p>
+<p><strong>定义1.5 费马素数(Fermat 素数)</strong>  $~~F(n)=2^{2^n}+1$</p>
+<p><strong>定义1.6 梅森素数(Mersenne 素数)</strong>   $~~M_p=2^p-1$</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Fundamentals-of-cryptography/" rel="tag"># Fundamentals of cryptography</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/03/03/Chapter3practice/" rel="prev" title="Java学习练习题(二)">
+      <i class="fa fa-chevron-left"></i> Java学习练习题(二)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/03/10/Chapter4/" rel="next" title="Java学习笔记(三)">
+      Java学习笔记(三) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-整除"><span class="nav-number">1.</span> <span class="nav-text">1.1 整除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-最大公因数和最小公倍数"><span class="nav-number">2.</span> <span class="nav-text">1.2 最大公因数和最小公倍数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-欧几里得算法-计算最大公约数"><span class="nav-number">3.</span> <span class="nav-text">1.3 欧几里得算法(计算最大公约数)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-二元一次方程"><span class="nav-number">4.</span> <span class="nav-text">1.4 二元一次方程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5-整数唯一分解定理"><span class="nav-number">5.</span> <span class="nav-text">1.5 整数唯一分解定理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6-素数"><span class="nav-number">6.</span> <span class="nav-text">1.6 素数</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.1
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
