@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="基于方法的19道练习题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java学习练习题(五)">
+<meta property="og:url" content="http://yoursite.com/2020/03/28/Chapter6practice/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="基于方法的19道练习题">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-28T02:05:05.000Z">
+<meta property="article:modified_time" content="2020-03-30T09:58:47.694Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/03/28/Chapter6practice/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>Java学习练习题(五) | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-right"></div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/28/Chapter6practice/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Java学习练习题(五)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-03-28 10:05:05" itemprop="dateCreated datePublished" datetime="2020-03-28T10:05:05+08:00">2020-03-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-03-30 17:58:47" itemprop="dateModified" datetime="2020-03-30T17:58:47+08:00">2020-03-30</time>
+              </span>
+
+          
+            <div class="post-description">基于方法的19道练习题</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>1.<em>(求一个整数的各位数字之和)</em> 使用下面的方法头，编写一个可以输入一个整数，然后显示这个整数所有数字之和</p>
+<p><code>public static int sumDigits(long n)</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PrintSum</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">		System.out.print(<span class="string">"Enter an integer: "</span>);</span><br><span class="line">		<span class="keyword">long</span> n = input.nextLong();</span><br><span class="line"></span><br><span class="line">		System.out.println(sumDigits(n));</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">sumDigits</span><span class="params">(<span class="keyword">long</span> n)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span> (n != <span class="number">0</span>) &#123;</span><br><span class="line">			<span class="keyword">long</span> digit = n % <span class="number">10</span>;</span><br><span class="line">			sum += digit;</span><br><span class="line">			n /= <span class="number">10</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> sum;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.<em>(反序显示一个整数)</em> 使用下面的方法头编写程序可以输入一个整数，然后显示它的反序数</p>
+<p><code>public static void reverse(int number)</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShowReverse</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		System.out.print(<span class="string">"Enter an integrer: "</span>);</span><br><span class="line">		<span class="keyword">int</span> number = input.nextInt();</span><br><span class="line"></span><br><span class="line">		reverse(number);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> number)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">while</span> (number != <span class="number">0</span>) &#123;</span><br><span class="line">			System.out.print(number % <span class="number">10</span>);</span><br><span class="line">			number /= <span class="number">10</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3.<em>(显示图案)</em> 使用下面的方法头编写程序可以显示此图案</p>
+<script type="math/tex; mode=display">\begin{align*}
+&1 \\
+2~&1 \\
+3~2~&1 \\
+\ldots \\
+n~n-1~\ldots~3~2~&1
+\end{align*}</script><p><code>public static void displayPattern(int n)</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShowPattern</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">		System.out.print(<span class="string">"Enter an integer: "</span>);</span><br><span class="line">		<span class="keyword">int</span> n = input.nextInt();</span><br><span class="line"></span><br><span class="line">		displayPattern(n);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">displayPattern</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = n; j &gt;= <span class="number">1</span>; j--) &#123;</span><br><span class="line">				<span class="keyword">if</span> (j &gt; i)</span><br><span class="line">					System.out.print(<span class="string">"    "</span>);</span><br><span class="line">				<span class="keyword">else</span></span><br><span class="line">					System.out.printf(<span class="string">"%4d"</span>, j);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>4.<em>(摄氏度和华氏度之间的转换)</em> 编写一个类，包含下面两个方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">/** Convert from Celsius to Fahreheit */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">celsiusToFahreheit</span><span class="params">(<span class="keyword">double</span> celsius)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"> <span class="comment">/** Convert from Fahreheit to Celsius */</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">fahreheitToCelsius</span><span class="params">(<span class="keyword">double</span> fahreheit)</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TemperatureConvertion</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/** Convert from Celsius to Fahreheit */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">celsiusToFahreheit</span><span class="params">(<span class="keyword">double</span> celsius)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> (<span class="number">9.0</span> / <span class="number">5</span>) * celsius + <span class="number">32</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/** Convert from Fahreheit to Celsius */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">fahreheitToCelsius</span><span class="params">(<span class="keyword">double</span> fahreheit)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> (<span class="number">5.0</span> / <span class="number">9</span>) * (fahreheit - <span class="number">32</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TemperatureConvertionTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		System.out.printf(<span class="string">"摄氏度\t华氏度\t\t华氏度\t摄氏度\n"</span>);</span><br><span class="line">		System.out.printf(<span class="string">"-------------------------------------\n"</span>);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">double</span> celsius = <span class="number">40</span>;</span><br><span class="line">		<span class="keyword">double</span> fahreheit = <span class="number">120</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">			System.out.printf(<span class="string">"%4.1f\t%4.1f\t\t%4.1f\t%5.2f\n"</span>, celsius, TemperatureConvertion.celsiusToFahreheit(celsius),</span><br><span class="line">					fahreheit, TemperatureConvertion.fahreheitToCelsius(fahreheit));</span><br><span class="line">			celsius--;</span><br><span class="line">			fahreheit -= <span class="number">10</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>5.<em>(使用isPrimme方法)</em> 求小于10000的素数的个数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NumberOfPrimes</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		System.out.println(numberOfPrimes(<span class="number">10000</span>));</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/** Count the number of primes */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">numberOfPrimes</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (isPrime(i))</span><br><span class="line">				count++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> count;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/** Check whether number is prime */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isPrime</span><span class="params">(<span class="keyword">int</span> number)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> divisor = <span class="number">2</span>; divisor &lt;= number / <span class="number">2</span>; divisor++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (number % divisor == <span class="number">0</span>) &#123;</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">false</span>;	<span class="comment">// Number is not a prime</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">true</span>; <span class="comment">// Number is a prime</span></span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>6.<em>(显示字符)</em> 使用如下方法头，编写一个打印字符的方法</p>
+<p><code>public static void printChars(char ch1, char ch2, int numberPerLine)</code></p>
+<p>该方法打印ch1到ch2之间的字符，每行按指定个数打印，字符之间用一个空格字符隔开</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PrintChars</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		printChars(<span class="string">'1'</span>, <span class="string">'Z'</span>, <span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printChars</span><span class="params">(<span class="keyword">char</span> ch1, <span class="keyword">char</span> ch2, <span class="keyword">int</span> numberPerLine)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> count = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">char</span> c = ch1; c &lt;= ch2; c++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (count % numberPerLine == <span class="number">0</span>)</span><br><span class="line">				System.out.println(c);</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				System.out.print(c + <span class="string">" "</span>);</span><br><span class="line">			count++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>7.<em>(估算 π )</em> π可以用下面的数列进行计算：</p>
+<script type="math/tex; mode=display">m(i)=4(1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}+\frac{1}{9}-\frac{1}{11}+\cdots+\frac{(-1)^{i+1}}{2i-1})</script><p>编写一个方法，对于给定的i返回m(i)，并编写一个测试程序，显示如下表格</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>i</th>
+<th>m(i)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>4.000</td>
+</tr>
+<tr>
+<td>101</td>
+<td>3.1515</td>
+</tr>
+<tr>
+<td>201</td>
+<td>3.1466</td>
+</tr>
+<tr>
+<td>301</td>
+<td>3.1449</td>
+</tr>
+<tr>
+<td>401</td>
+<td>3.1441</td>
+</tr>
+<tr>
+<td>501</td>
+<td>3.1436</td>
+</tr>
+<tr>
+<td>601</td>
+<td>3.1433</td>
+</tr>
+<tr>
+<td>701</td>
+<td>3.1430</td>
+</tr>
+<tr>
+<td>801</td>
+<td>3.1428</td>
+</tr>
+<tr>
+<td>901</td>
+<td>3.1427</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ComputPI</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		  showPI();</span><br><span class="line"><span class="comment">//		System.out.println(estimatePI(201));</span></span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">showPI</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.printf(<span class="string">"i\t\tm(i)\n"</span>);</span><br><span class="line">		System.out.println(<span class="string">"------------------------"</span>);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">1000</span>; i += <span class="number">100</span>)</span><br><span class="line">			System.out.printf(<span class="string">"%-3d\t\t%6.4f\n"</span>, i, estimatePI(i));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">estimatePI</span><span class="params">(<span class="keyword">int</span> m)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">double</span> sum = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</span><br><span class="line">			sum += (Math.pow(-<span class="number">1</span>, i + <span class="number">1</span>) / (<span class="number">2</span> * i - <span class="number">1</span>));</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> <span class="number">4</span> * sum;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>8.<em>(一年的天数)</em> 使用下面的方法头编写一个方法，返回一年的天数</p>
+<p><code>public static int numberOfDaysInAYear(int year)</code></p>
+<p>编写一个测试程序，显示从2000到2020年间每年的天数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NumberOfDays</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		showDaysBetween(<span class="number">2000</span>, <span class="number">2020</span>);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">showDaysBetween</span><span class="params">(<span class="keyword">int</span> startYear, <span class="keyword">int</span> endYear)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = startYear; i &lt;= endYear; i++)</span><br><span class="line">			System.out.println(numberOfDaysInAYear(i));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">numberOfDaysInAYear</span><span class="params">(<span class="keyword">int</span> year)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> isLeapYear(year) ? <span class="number">366</span> :<span class="number">365</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isLeapYear</span><span class="params">(<span class="keyword">int</span> year)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> year % <span class="number">400</span> == <span class="number">0</span> || (year % <span class="number">4</span> == <span class="number">0</span> &amp;&amp; year % <span class="number">100</span> != <span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>9.<em>(检测密码)</em> 一些网站对于密码具有一些规则。编写一个方法，检测字符串是否是一个有效密码。假定密码规则如下：</p>
+<p>·密码至少8位字符<br>·密码仅能包含字母和数字<br>·密码必须包含至少两个数字</p>
+<p>编写一个程序，提示用户输入一个密码，如果符合规则，则显示<code>Valid Password</code>，否则显示<code>Invalid Password</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Code</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">		System.out.print(<span class="string">"Enter your code: "</span>);</span><br><span class="line">		String code = input.nextLine();</span><br><span class="line"></span><br><span class="line">		String isAlright = isValid(code) ? <span class="string">"Valid Password"</span> : <span class="string">"Invalid Password"</span>;</span><br><span class="line">		System.out.println(isAlright);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isValid</span><span class="params">(String code)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> (isAtLeast2Nums(code) &amp;&amp; isAtLeast8Chars(code) &amp;&amp; isOnlyCharsAndNums(code)) ? <span class="keyword">true</span> : <span class="keyword">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isAtLeast8Chars</span><span class="params">(String code)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> code.length() &gt;= <span class="number">8</span> ? <span class="keyword">true</span> : <span class="keyword">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isOnlyCharsAndNums</span><span class="params">(String code)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; code.length(); i++) &#123;</span><br><span class="line">			<span class="keyword">char</span> c = code.charAt(i);</span><br><span class="line">			<span class="keyword">if</span> (!Character.isLetterOrDigit(c))</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isAtLeast2Nums</span><span class="params">(String code)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; code.length(); i++) &#123;</span><br><span class="line">			<span class="keyword">char</span> c = code.charAt(i);</span><br><span class="line">			<span class="keyword">if</span> (Character.isDigit(c))</span><br><span class="line">				count++;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> (count &gt;= <span class="number">2</span>) ? <span class="keyword">true</span> : <span class="keyword">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>10.<em>(计算一个字符串中字母的个数)</em> 编写一个方法，使用下面的方法头计算字符串中的字母的个数：</p>
+<p><code>public static int countLetters(String s)</code></p>
+<p>编写一个测试程序，提示用户输入字符串，然后显示字符串中的字母的个数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NumberOfChars</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">		System.out.print(<span class="string">"Enter a string: "</span>);</span><br><span class="line">		String s = input.nextLine();</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"There are "</span> + countLetters(s) + <span class="string">" letters in this string"</span>);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">countLetters</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (Character.isLetter(s.charAt(i)))</span><br><span class="line">				count++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> count;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>11.<em>(数学：平方根的近似求法)</em> 有几种实现Math类中的sqrt方法的技术。其中一个称为巴比伦法。它通过使用下面的公式反复计算近似得到的一个数字n的平方根：</p>
+<script type="math/tex; mode=display">nextGuess = (lastGuess + n / lastGuess) / 2</script><p>当nextGuess和lastGuess几乎相同时，nextGuess 就是平方根的近似值。最初的猜测值可以是任意一个正值(例如1)。这个值就是lastGuess的初始值。如果nextGuess和lastGuess的差小于一个很小的数，比如0.0001，就可以认为nextGuess是n的平方根的近似值；否则，nextGuess就成为astGuess，求近似值的过程继续执行。实现下面的方法，返回n的平方根</p>
+<p>``</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Sqrt</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		System.out.println(sqrt(<span class="number">4</span>));</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">sqrt</span><span class="params">(<span class="keyword">long</span> n)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">double</span> lastGuess = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">double</span> nextGuess = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line"></span><br><span class="line">			nextGuess = (lastGuess + n / lastGuess) / <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> (Math.abs(lastGuess - nextGuess) &lt; <span class="number">1E-4</span>)</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				lastGuess = nextGuess;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> nextGuess;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>12.<em>(显示当前日期和时间)</em> 编写程序，显示当前的日期和时间</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DisplayTime</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		System.out.println(getTime());</span><br><span class="line"></span><br><span class="line">		Date date=<span class="keyword">new</span> Date();</span><br><span class="line">		SimpleDateFormat dFormat=<span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy年MM月dd日"</span>);</span><br><span class="line">		System.out.println(dFormat.format(date));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getTime</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">long</span> totalMilliseconds = System.currentTimeMillis();</span><br><span class="line"></span><br><span class="line">		<span class="comment">//Obtain the total seconds since midnight, Jan 1, 1970</span></span><br><span class="line">		<span class="keyword">long</span> totalSeconds = totalMilliseconds / <span class="number">1000</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//Compute the current second in the minute in the hour</span></span><br><span class="line">		<span class="keyword">long</span> currentSecond = totalSeconds % <span class="number">60</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//Obtain the total minutes</span></span><br><span class="line">		<span class="keyword">long</span> totalMinutes = totalSeconds / <span class="number">60</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//Compute the current minute in the hour</span></span><br><span class="line">		<span class="keyword">long</span> curentMinute = totalMinutes % <span class="number">60</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//Obtain the total hours</span></span><br><span class="line">		<span class="keyword">long</span> totalHours = totalMinutes / <span class="number">60</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//Compute the current hour</span></span><br><span class="line">		<span class="keyword">long</span> currentHour = totalHours % <span class="number">24</span> + <span class="number">8</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> currentHour + <span class="string">":"</span> + curentMinute + <span class="string">":"</span> + currentSecond;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>13.<em>(回文素数)</em> 回文素数是指一个数同时为素数和回文数。编写程序，显示前100个回文数。每行显示10个数，数字中间用一个空格隔开</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PrimeAndPalindrome</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		displayAll(<span class="number">100</span>, <span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">displayAll</span><span class="params">(<span class="keyword">int</span> number, <span class="keyword">int</span> perLine)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; count &lt; number; i++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (isPalindrome(i) &amp;&amp; isPrime(i)) &#123;</span><br><span class="line">				System.out.print(i + <span class="string">" "</span>);</span><br><span class="line">				count++;</span><br><span class="line"></span><br><span class="line">				<span class="keyword">if</span> (count % perLine == <span class="number">0</span>)</span><br><span class="line">					System.out.println();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isPrime</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">2</span>; k &lt;= n / <span class="number">2</span>; k++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (n % k == <span class="number">0</span>)</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isPalindrome</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">		String s = n + <span class="string">""</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> pre = <span class="number">0</span>, post = s.length() - <span class="number">1</span>; pre &lt; s.length() / <span class="number">2</span>; pre++, post--) &#123;</span><br><span class="line">			<span class="keyword">if</span> (s.charAt(pre) != s.charAt(post))</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>14.<em>(梅森素数)</em> 如果一个素数可以写成 $2^p+1$ 形式，其中p是某个正整数，那么这个素数就称为梅森素数。编写程序，找出 $p\leqslant31$的所有梅森素数，然后如下显示输出结果</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>p</th>
+<th>2^p-1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>3</td>
+<td>7</td>
+</tr>
+<tr>
+<td>5</td>
+<td>31</td>
+</tr>
+<tr>
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MasonPrime</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		isMason();</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">isMason</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.print(<span class="string">"p\t\t2^p-1\n"</span>);</span><br><span class="line">		System.out.println(<span class="string">"-----------------------"</span>);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> p = <span class="number">2</span>; p &lt;= <span class="number">31</span>; p++) &#123;</span><br><span class="line">			<span class="keyword">double</span> after = Math.pow(<span class="number">2</span>, p) - <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">if</span> (isPrime(after)) &#123;</span><br><span class="line">				System.out.printf(<span class="string">"%d\t\t%d\n"</span>, p, (<span class="keyword">int</span>)after);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isPrime</span><span class="params">(<span class="keyword">double</span> n)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">2</span>; k &lt;= n / <span class="number">2</span>; k++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (n % k == <span class="number">0</span>)</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>15.<em>(游戏：双骰子游戏)</em> 掷双骰子游戏是赌场中非常流行的骰子游戏。编写程序，玩这个游戏的一个变种，如下所描述：</p>
+<p>掷两个骰子。每个骰子有六个面，分别表示值1,2,…,6.检查这两个骰子的和。如果和为2、3或12(称为掷骰子(crap))，你就输了；如果你是7或者11(称作自然(natural))，你知道掷出一个7或者掷出和刚才相同的点数。如果掷出的是7，你就输了。如果掷出的点数和你前一次掷出的点数相同，你就赢了。程序扮演一个独立的玩家</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CrapGame</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		startGame();</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">startGame</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> n1 = generate();</span><br><span class="line">		<span class="keyword">int</span> n2 = generate();</span><br><span class="line">		<span class="keyword">int</span> sum = n1 + n2;</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"You rolled "</span> + n1 + <span class="string">" + "</span> + n2 + <span class="string">" = "</span> + (n1 + n2));</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (isCrap(sum))</span><br><span class="line">			System.out.println(<span class="string">"You lose"</span>);</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (isNatural(sum))</span><br><span class="line">			System.out.println(<span class="string">"You win"</span>);</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			System.out.println(<span class="string">"point is "</span> + sum);</span><br><span class="line">			otherSituation(sum);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">generate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> n = (<span class="keyword">int</span>)(<span class="number">1</span> + Math.random() * <span class="number">7</span>);</span><br><span class="line">		<span class="keyword">return</span> n;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isCrap</span><span class="params">(<span class="keyword">int</span> sum)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (sum == <span class="number">2</span> || sum == <span class="number">3</span> || sum == <span class="number">12</span>)</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isNatural</span><span class="params">(<span class="keyword">int</span> sum)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (sum == <span class="number">7</span> || sum == <span class="number">11</span>)</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">otherSituation</span><span class="params">(<span class="keyword">int</span> sum)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">			<span class="keyword">int</span> n1 = generate();</span><br><span class="line">			<span class="keyword">int</span> n2 = generate();</span><br><span class="line">			<span class="keyword">int</span> newSum = n1 + n2;</span><br><span class="line"></span><br><span class="line">			System.out.println(<span class="string">"You rolled "</span> + n1 + <span class="string">" + "</span> + n2 + <span class="string">" = "</span> + (n1 + n2));</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> (newSum == <span class="number">7</span>) &#123;</span><br><span class="line">				System.out.println(<span class="string">"You lose"</span>);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (sum == newSum) &#123;</span><br><span class="line">				System.out.println(<span class="string">"You win"</span>);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				sum = newSum;</span><br><span class="line">				System.out.println(<span class="string">"The point is "</span> + sum);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>16.<em>(赢取双骰子赌博游戏的机会)</em> 修改15题的程序使其运行10000次，然后显示赢得游戏的次数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CrapGamePlus</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"You win "</span> + startGame(<span class="number">10000</span>) + <span class="string">" times"</span>);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">startGame</span><span class="params">(<span class="keyword">int</span> number)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">while</span> (number != <span class="number">0</span>) &#123;</span><br><span class="line">			<span class="keyword">int</span> n1 = generate();</span><br><span class="line">			<span class="keyword">int</span> n2 = generate();</span><br><span class="line">			<span class="keyword">int</span> sum = n1 + n2;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> (isNatural(sum))</span><br><span class="line">				count++;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (otherSituation(sum))</span><br><span class="line">				count++;</span><br><span class="line"></span><br><span class="line">			number--;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> count;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">generate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> n = (<span class="keyword">int</span>)(<span class="number">1</span> + Math.random() * <span class="number">7</span>);</span><br><span class="line">		<span class="keyword">return</span> n;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isCrap</span><span class="params">(<span class="keyword">int</span> sum)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (sum == <span class="number">2</span> || sum == <span class="number">3</span> || sum == <span class="number">12</span>)</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isNatural</span><span class="params">(<span class="keyword">int</span> sum)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (sum == <span class="number">7</span> || sum == <span class="number">11</span>)</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">otherSituation</span><span class="params">(<span class="keyword">int</span> sum)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">			<span class="keyword">int</span> n1 = generate();</span><br><span class="line">			<span class="keyword">int</span> n2 = generate();</span><br><span class="line">			<span class="keyword">int</span> newSum = n1 + n2;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> (newSum == <span class="number">7</span>)</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (sum == newSum)</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				sum = newSum;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>17.<em>(打印日历)</em> 使用Zeller算法获得每月开始的第一天是星期几并打印当月日历</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PrintCalendaPlus</span> </span>&#123;</span><br><span class="line">	<span class="comment">/** Main method */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Prompt the user to enter year</span></span><br><span class="line">		System.out.print(<span class="string">"Enter full year (e.g., 2012): "</span>);</span><br><span class="line">		<span class="keyword">int</span> year = input.nextInt();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Prompt the user to enter month</span></span><br><span class="line">		System.out.print(<span class="string">"Enter month as a number between 1 and 12: "</span>);</span><br><span class="line">		<span class="keyword">int</span> month = input.nextInt();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Print calendar for the month of the year</span></span><br><span class="line">		printMonth(year, month);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/** Print the calendar for a month in a year */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printMonth</span><span class="params">(<span class="keyword">int</span> year, <span class="keyword">int</span> month)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// Print the headings of the calendar</span></span><br><span class="line">		printMonthTitle(year, month);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Print the body of the calendar</span></span><br><span class="line">		printMonthBody(year, month);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/** Print the month title, e.g., March 2012*/</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printMonthTitle</span><span class="params">(<span class="keyword">int</span> year, <span class="keyword">int</span> month)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"        "</span> + getMonthName(month) + <span class="string">" "</span> + year);</span><br><span class="line">		System.out.println(<span class="string">"-----------------------------"</span>);</span><br><span class="line">		System.out.println(<span class="string">" Sat Sun Mon Tue Wed Thu Fri"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/** Get the English name for the month */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getMonthName</span><span class="params">(<span class="keyword">int</span> month)</span> </span>&#123;</span><br><span class="line">		String monthName = <span class="string">""</span>;</span><br><span class="line">		<span class="keyword">switch</span> (month) &#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">1</span>: monthName = <span class="string">"January"</span>;	<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">2</span>: monthName = <span class="string">"February"</span>;	<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">3</span>: monthName = <span class="string">"March"</span>;	<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">4</span>: monthName = <span class="string">"April"</span>;	<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">5</span>: monthName = <span class="string">"May"</span>;	<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">6</span>: monthName = <span class="string">"June"</span>;	<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">7</span>: monthName = <span class="string">"July"</span>;	<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">8</span>: monthName = <span class="string">"August"</span>;	<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">9</span>: monthName = <span class="string">"September"</span>;	<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">10</span>: monthName = <span class="string">"October"</span>;	<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">11</span>: monthName = <span class="string">"November"</span>;	<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">12</span>: monthName = <span class="string">"December"</span>;	<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> monthName;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/** Print the month body */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printMonthBody</span><span class="params">(<span class="keyword">int</span> year, <span class="keyword">int</span> month)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// Get start day of the week for the first date in the month</span></span><br><span class="line">		<span class="keyword">int</span> startDay = getStartDay(year, month);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Get number of days in the month</span></span><br><span class="line">		<span class="keyword">int</span> numberOfDaysInMonth = getNumberOfDaysInMonth(year, month);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Pad space before the first day of the month</span></span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; startDay; i++)</span><br><span class="line">			System.out.print(<span class="string">"    "</span>);</span><br><span class="line">		<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= numberOfDaysInMonth; i++) &#123;</span><br><span class="line">			System.out.printf(<span class="string">"%4d"</span>, i);</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> ((i + startDay) % <span class="number">7</span> == <span class="number">0</span>)</span><br><span class="line">				System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		System.out.println();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/** Get the start day of month/1/year */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getStartDay</span><span class="params">(<span class="keyword">int</span> year, <span class="keyword">int</span> month)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (month == <span class="number">1</span> || month == <span class="number">2</span>) &#123;</span><br><span class="line">			year--;</span><br><span class="line">			month += <span class="number">12</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> j = year / <span class="number">100</span>;</span><br><span class="line">		<span class="keyword">int</span> k = year % <span class="number">100</span>;</span><br><span class="line">		<span class="keyword">int</span> h = (<span class="number">1</span> + ((<span class="number">26</span> * (month + <span class="number">1</span>)) / <span class="number">10</span>) + k + k / <span class="number">4</span> + j / <span class="number">4</span> + <span class="number">5</span> * j) % <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> h;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/** Get the number of days in a month */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getNumberOfDaysInMonth</span><span class="params">(<span class="keyword">int</span> year, <span class="keyword">int</span> month)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (month == <span class="number">1</span> || month == <span class="number">3</span> || month == <span class="number">5</span> || month == <span class="number">7</span> || month == <span class="number">8</span> ||</span><br><span class="line">				month == <span class="number">10</span> || month == <span class="number">12</span>)</span><br><span class="line">			<span class="keyword">return</span> <span class="number">31</span>;</span><br><span class="line">		<span class="keyword">if</span> (month == <span class="number">4</span> || month == <span class="number">6</span> || month == <span class="number">9</span> || month == <span class="number">11</span>)</span><br><span class="line">			<span class="keyword">return</span> <span class="number">30</span>;</span><br><span class="line">		<span class="keyword">if</span> (month == <span class="number">2</span>)</span><br><span class="line">			<span class="keyword">return</span> isLeapyear(year) ? <span class="number">29</span> : <span class="number">28</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// If month is incorrect</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/** Determine if it is a leap year */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isLeapyear</span><span class="params">(<span class="keyword">int</span> year)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> year % <span class="number">400</span> == <span class="number">0</span> || (year % <span class="number">4</span> == <span class="number">0</span> &amp;&amp; year % <span class="number">100</span> != <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>18.<em>(几何：正多边形的面积)</em> 正多边形是一个n条边的多边形，它的每条边的长度都相等，而且所有的角度也相等(即多边形既是等边的也是等角的)。计算正多边形的面积公式是：</p>
+<script type="math/tex; mode=display">面积=\frac{n\times s^2}{4\times \tan{\frac{\pi}{n}}}</script><p>使用下面的方法头</p>
+<p><code>public static double area(int n, double side)</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ComputeArea</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">		System.out.print(<span class="string">"Enter the number of sides: "</span>);</span><br><span class="line">		<span class="keyword">int</span> n = input.nextInt();</span><br><span class="line">		System.out.print(<span class="string">"Enter the side: "</span>);</span><br><span class="line">		<span class="keyword">double</span> side = input.nextDouble();</span><br><span class="line">		System.out.println(<span class="string">"The area of the polygon is: "</span> + area(n, side));</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">area</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">double</span> side)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">double</span> s = (n * side * side) / (<span class="number">4</span> * Math.tan(Math.PI / n));</span><br><span class="line">		<span class="keyword">return</span> s;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>19.<em>(生成随机字符)</em> 打印100个大写字母及100个一位数字，每行打印10个</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Chapter6.*;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RandomChars</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">final</span> <span class="keyword">int</span> CHARS_PER_LINE = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">			System.out.print(RandomCharacter.getRandomUpperCaseLetter() + <span class="string">" "</span>);</span><br><span class="line">			System.out.print(RandomCharacter.getRandomDigitCaseCharacter() + <span class="string">" "</span>);</span><br><span class="line">			<span class="keyword">if</span> ((i + <span class="number">1</span>) % <span class="number">5</span> == <span class="number">0</span>)</span><br><span class="line">				System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Chapter6;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RandomCharacter</span> </span>&#123;</span><br><span class="line">	<span class="comment">/** Generate a random character between ch1 and ch2 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">char</span> <span class="title">getRandomCharacter</span><span class="params">(<span class="keyword">char</span> ch1, <span class="keyword">char</span> ch2)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> (<span class="keyword">char</span>)(ch1 + Math.random() * (ch2 - ch1 + <span class="number">1</span>));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/** Generate a random lowercase letter*/</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">char</span> <span class="title">getRandomLowerCaseLetter</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> getRandomCharacter(<span class="string">'a'</span>, <span class="string">'z'</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/** Generate a random uppercase letter*/</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">char</span> <span class="title">getRandomUpperCaseLetter</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> getRandomCharacter(<span class="string">'A'</span>, <span class="string">'Z'</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/** Generate a random digit character*/</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">char</span> <span class="title">getRandomDigitCaseCharacter</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> getRandomCharacter(<span class="string">'0'</span>, <span class="string">'9'</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/** Generate a random character*/</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">char</span> <span class="title">getRandomCharacter</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> getRandomCharacter(<span class="string">'\u0000'</span>, <span class="string">'\uFFFF'</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Java/" rel="tag"># Java</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/03/17/Chapter5practice/" rel="prev" title="Java学习练习题(四)">
+      <i class="fa fa-chevron-left"></i> Java学习练习题(四)
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.1
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
