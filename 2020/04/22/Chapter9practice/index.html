@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="基于对象和类的9道练习题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java学习练习题(八)">
+<meta property="og:url" content="http://yoursite.com/2020/04/22/Chapter9practice/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="基于对象和类的9道练习题">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-04-22T01:23:39.000Z">
+<meta property="article:modified_time" content="2020-04-22T08:54:00.692Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/04/22/Chapter9practice/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>Java学习练习题(八) | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-right"></div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/22/Chapter9practice/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Java学习练习题(八)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-04-22 09:23:39 / Modified: 16:54:00" itemprop="dateCreated datePublished" datetime="2020-04-22T09:23:39+08:00">2020-04-22</time>
+            </span>
+
+          
+            <div class="post-description">基于对象和类的9道练习题</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>1.<em>(Stock类)</em> 这个类包括：<br>·一个名为<code>symbol</code>的字符串数据域代表股票<br>·一个名为<code>name</code>的字符串数据域表示股票名字<br>·一个名为<code>previousClosingPrice</code>的double类型的数据域，它存储的是前一日的股票值<br>·一个名为<code>currentPrice</code>的double类型数据域，它存储的是当时的股票值<br>·一个创建一只有特定代码和名字的股票的构造方法<br>·一个名为<code>getChangePercent()</code>的方法，返回从previousClosingPrice到currentPrice变化的百分比<br>画出该类的UML图并实现这个类。编写一个测试程序，创建一个Stock对象，它的股票代码是ORCL，股票名字为Oracle Corporation，前一日收盘价是34.5。设置新的当前值为34.35，然后显示市值变化的百分比</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Stock</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String symbol;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">double</span> previousClosingPrice;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">double</span> currentPrice;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Stock</span><span class="params">(String symbol, String name)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.symbol = symbol;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Stock</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>(<span class="string">"ABCD"</span>, <span class="string">"Some Stock"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getPreviousClosingPrice</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> previousClosingPrice;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPreviousClosingPrice</span><span class="params">(<span class="keyword">double</span> previousClosingPrice)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.previousClosingPrice = previousClosingPrice;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getCurrentPrice</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> currentPrice;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCurrentPrice</span><span class="params">(<span class="keyword">double</span> currentPrice)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.currentPrice = currentPrice;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getChangePercent</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> Math.abs(previousClosingPrice - currentPrice) /</span><br><span class="line">				previousClosingPrice;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StockTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Stock myStock = <span class="keyword">new</span> Stock(<span class="string">"ORCL"</span>, <span class="string">"Oracle Corporation"</span>);</span><br><span class="line"></span><br><span class="line">		myStock.setPreviousClosingPrice(<span class="number">34.5</span>);</span><br><span class="line">		myStock.setCurrentPrice(<span class="number">34.35</span>);</span><br><span class="line"></span><br><span class="line">		NumberFormat numberFormat = NumberFormat.getPercentInstance();</span><br><span class="line">		numberFormat.setMinimumFractionDigits(<span class="number">4</span>);;</span><br><span class="line">		System.out.println(<span class="string">"The value changed "</span> + numberFormat.format(myStock.getChangePercent()));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.<em>(使用Date类)</em>编写程序创建一个Date对象，设置它的流逝时间分别为10000、100000、1000000、10000000、100000000、1000000000、10000000000、10000000000，然后使用toString()方法分别显示上述日期</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DateTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">long</span> elapse = <span class="number">10000</span>;</span><br><span class="line">		Date myDate = <span class="keyword">new</span> Date(<span class="number">10000</span>);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">8</span>; i++) &#123;</span><br><span class="line">			System.out.println(myDate.toString());</span><br><span class="line">			myDate.setTime(elapse *= <span class="number">10</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3.<em>(使用Random类)</em> 编写一个程序，创建一个种子为1000的Random对象，然后使用<code>nextInt(100)</code>方法显示0到100之间前50个随机整数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Random;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RandomTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Random myRandom = <span class="keyword">new</span> Random(<span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">50</span>; i++) &#123;</span><br><span class="line">			System.out.printf(<span class="string">"%-4d"</span>, myRandom.nextInt(<span class="number">100</span>));</span><br><span class="line">			<span class="keyword">if</span> (i % <span class="number">10</span> == <span class="number">0</span>)</span><br><span class="line">				System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>4.<em>(使用GregorianCalendar类)</em> Java API中有一个位于包java.util中的类GregorianCalendar，可以使用它获得某个日期的年、月、日。它的无参构造方法构建一个当前日期的实例，<code>get(GregorianCalendar.YEAR)</code>，<code>get(GregorianCalendar.MONTH)</code>和<code>get(GregorianCalendar.DAY_OF_MONTH)</code>方法返回年、月和日。编写一个程序完成两个任务：<br>·显示当前的前、月、和日<br>·GregorianCalendar类包含<code>setTimeInMillis(long)</code>方法，可以用于设置从1970年1月1日算起的一个特定流逝时间值。将这个值设置为1234567898765L，然后显示对应的年、月和日</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.GregorianCalendar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GregorianCalendarTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		GregorianCalendar myCalendar = <span class="keyword">new</span> GregorianCalendar();</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"Now: "</span> + myCalendar.get(GregorianCalendar.YEAR) +</span><br><span class="line">				<span class="string">" / "</span> + myCalendar.get(GregorianCalendar.MONTH) + <span class="string">" / "</span> +</span><br><span class="line">				myCalendar.get(GregorianCalendar.DAY_OF_MONTH));</span><br><span class="line"></span><br><span class="line">		myCalendar.setTimeInMillis(<span class="number">1234567898765L</span>);</span><br><span class="line">		System.out.println(<span class="string">"Reset: "</span> + myCalendar.get(GregorianCalendar.YEAR) +</span><br><span class="line">				<span class="string">" / "</span> + myCalendar.get(GregorianCalendar.MONTH) + <span class="string">" / "</span> +</span><br><span class="line">				myCalendar.get(GregorianCalendar.DAY_OF_MONTH));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>5.<em>(秒表)</em> 设计一个名为StopWatch的类，该类包含：<br>·具有设置方法的私有数据域<code>startTime</code>和<code>endTime</code><br>·一个无参构造方法，使用当前时间来初始化<code>startTime</code><br>·一个名为<code>startTime()</code>的方法，将<code>startTime</code>重设为当前时间<br>·一个名为<code>stop()</code>的方法，将<code>endTime</code>设置为当前时间<br>·一个名为<code>getElapsedTime()</code>的方法，返回以毫秒为单位的秒表记录流逝时间<br>画出该类的UML图并实现这个类。编写一个测试程序，用于测量使用选择排序对100000个数字进行排序的执行时间</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StopWatch</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">long</span> startTime;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">long</span> endTime;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">StopWatch</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		startTime = System.currentTimeMillis();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">getStartTime</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> startTime;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setStartTime</span><span class="params">(<span class="keyword">long</span> startTime)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.startTime = startTime;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">getEndTime</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> endTime;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setEndTime</span><span class="params">(<span class="keyword">long</span> endTime)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.endTime = endTime;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		startTime = System.currentTimeMillis();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">stop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		endTime = System.currentTimeMillis();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">getElapsedTime</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> endTime - startTime;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Random;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StopWatchTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Random myRandom = <span class="keyword">new</span> Random();</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span>[] array = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">100000</span>];</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; array.length; i++)</span><br><span class="line">			array[i] = myRandom.nextInt();</span><br><span class="line"></span><br><span class="line">		StopWatch myWatch = <span class="keyword">new</span> StopWatch();</span><br><span class="line"></span><br><span class="line">		myWatch.start();</span><br><span class="line">		Chapter7.SelectionSort.selectionSort(array);</span><br><span class="line">		myWatch.stop();</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"Runned: "</span> + myWatch.getElapsedTime() + <span class="string">"ms"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SelectionSort</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectionSort</span><span class="params">(<span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; list.length; i++) &#123;</span><br><span class="line">			<span class="comment">// Find the minimum in the list[i..list.length-1]</span></span><br><span class="line">			<span class="keyword">int</span> currentMin = list[i];</span><br><span class="line">			<span class="keyword">int</span> currentMinIndex = i;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; list.length; j++) &#123;</span><br><span class="line">				<span class="keyword">if</span> (currentMin &gt; list[j]) &#123;</span><br><span class="line">					currentMinIndex = j;</span><br><span class="line">					currentMin = list[j];</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="comment">// Swap list[i] with list[currentMinIndex] if necessary</span></span><br><span class="line">			<span class="keyword">if</span> (currentMinIndex != i) &#123;</span><br><span class="line">				list[currentMinIndex] = list[i];</span><br><span class="line">				list[i] = currentMin;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectionSort</span><span class="params">(<span class="keyword">double</span>[] list)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; list.length; i++) &#123;</span><br><span class="line">			<span class="comment">// Find the minimum in the list[i..list.length-1]</span></span><br><span class="line">			<span class="keyword">double</span> currentMin = list[i];</span><br><span class="line">			<span class="keyword">int</span> currentMinIndex = i;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; list.length; j++) &#123;</span><br><span class="line">				<span class="keyword">if</span> (currentMin &gt; list[j]) &#123;</span><br><span class="line">					currentMinIndex = j;</span><br><span class="line">					currentMin = list[j];</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="comment">// Swap list[i] with list[currentMinIndex] if necessary</span></span><br><span class="line">			<span class="keyword">if</span> (currentMinIndex != i) &#123;</span><br><span class="line">				list[currentMinIndex] = list[i];</span><br><span class="line">				list[i] = currentMin;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>6.<em>(Fan类)</em> 设计一个名为Fan的类来代表风扇。这个类包括：<br>·三个名为<code>SLOW</code>、<code>MEDIUM</code>和<code>FAST</code>而值为1、2和3的常量，表示风扇的速度<br>·一个名为<code>speed</code>的int、类型私有数据域，表示风扇的速度(默认值为SLOW)<br>·一个名为<code>on</code>的boolean类型私有数据域，表示风扇是否打开(默认值为false)<br>·一个名为<code>radius</code>的double类型私有数据域，表示风扇的半径(默认值为5)<br>·一个名为<code>color</code>的字符串类型私有数据域，表示风扇的颜色(默认值为blue)<br>·这四个数据域的访问器和修改器方法<br>·一个创建默认风扇的无参构造方法<br>·一个名为<code>toString()</code>的方法返回描述风扇的字符串。如果风扇是打开的，那么该方法返回风扇的速度、颜色和半径组合而成的字符串。如果风扇没有打开，该方法就会返回一个由“fan is off”和风扇颜色及半径组合成的字符串</p>
+<p>画出该类的UML图并实现这个类。编写一个测试程序，创建两个Fan对象。将第一个对象设置最大速度、半径为10、颜色为yellow状态为打开。将第二个对象设置为中等速度、半径为5、颜色为blue、状态为关闭。通过调用他们的<code>toString()</code>方法显示这些对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Fan</span> </span>&#123;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> SLOW = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> MEDIUM = <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> FAST = <span class="number">3</span>;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> speed;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">boolean</span> on;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">double</span> radius;</span><br><span class="line">	<span class="keyword">private</span> String color;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Fan</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		speed = SLOW;</span><br><span class="line">		on = <span class="keyword">false</span>;</span><br><span class="line">		radius = <span class="number">5</span>;</span><br><span class="line">		color = <span class="string">"blue"</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getSpeed</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> speed;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setSpeed</span><span class="params">(<span class="keyword">int</span> speed)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.speed = speed;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isOn</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> on;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setOn</span><span class="params">(<span class="keyword">boolean</span> on)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.on = on;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getRadius</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> radius;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setRadius</span><span class="params">(<span class="keyword">double</span> radius)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.radius = radius;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getColor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> color;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setColor</span><span class="params">(String color)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.color = color;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (on)</span><br><span class="line">			<span class="keyword">return</span> <span class="string">"The fan's speed is "</span> + speed + <span class="string">", color is "</span> +</span><br><span class="line">					color + <span class="string">", radius is "</span> + radius;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">return</span> <span class="string">"The fan is off and color is "</span> + color +</span><br><span class="line">					<span class="string">", radius is "</span> + radius;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FanTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Fan fan1 = <span class="keyword">new</span> Fan();</span><br><span class="line">		fan1.setSpeed(Fan.FAST);</span><br><span class="line">		fan1.setRadius(<span class="number">10</span>);</span><br><span class="line">		fan1.setColor(<span class="string">"yellow"</span>);</span><br><span class="line">		fan1.setOn(<span class="keyword">true</span>);</span><br><span class="line">		System.out.println(fan1.toString());</span><br><span class="line"></span><br><span class="line">		Fan fan2 = <span class="keyword">new</span> Fan();</span><br><span class="line">		fan2.setSpeed(Fan.MEDIUM);</span><br><span class="line">		fan2.setRadius(<span class="number">5</span>);</span><br><span class="line">		System.out.println(fan2.toString());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>7.<em>(代数：二次方程式)</em> 为二次方程式 $ax^2+bx+c=0$设计一个名为<code>QuadraticEquation</code>的类。这个类包括：<br>·代表三个系数的私有数据域a、b、和c<br>·一个参数为a、b、和c的构造方法<br>·a、b、c的三个获取方法<br>·一个名为<code>getDiscriminant()</code>的方法返回判别式 $b^2-4ac$<br>·名为<code>getRoot1()</code>和<code>getRoot2</code>的方法返回等式的两个根：</p>
+<script type="math/tex; mode=display">r_1=\frac{-b+\sqrt{b^2-4ac}}{2a}~~~~r_2=\frac{-b-\sqrt{b^2-4ac}}{2a}</script><p>这些方法只有在判别式为非负数时才有用。如果判别式为负，这些方法返回0</p>
+<p>画出该类的UML图并实现这个类。编写一个测试程序，提示用户输入a、b、和c的值，然后显示判别式的结果。如果判别式为正数，显示两个根；如果判别式为0，显示一个根；否则，显示“The equation has no roots”</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">QuadraticEquation</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> a, b, c;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">QuadraticEquation</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.a = a;</span><br><span class="line">		<span class="keyword">this</span>.b = b;</span><br><span class="line">		<span class="keyword">this</span>.c = c;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getA</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> a;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setA</span><span class="params">(<span class="keyword">int</span> a)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.a = a;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getB</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> b;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setB</span><span class="params">(<span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.b = b;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getC</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> c;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setC</span><span class="params">(<span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.c = c;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getDiscriminant</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> b * b - <span class="number">4</span> * a * c;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getRoot1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="keyword">this</span>.getDiscriminant() &gt;= <span class="number">0</span>)</span><br><span class="line">			<span class="keyword">return</span> (-b + Math.sqrt(<span class="keyword">this</span>.getDiscriminant())) / <span class="number">2</span> * a;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getRoot2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="keyword">this</span>.getDiscriminant() &gt;= <span class="number">0</span>)</span><br><span class="line">			<span class="keyword">return</span> (-b - Math.sqrt(<span class="keyword">this</span>.getDiscriminant())) / <span class="number">2</span> * a;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">QuadraticEquationTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">		System.out.print(<span class="string">"Enter a, b, c: "</span>);</span><br><span class="line">		<span class="keyword">int</span> a = input.nextInt();</span><br><span class="line">		<span class="keyword">int</span> b = input.nextInt();</span><br><span class="line">		<span class="keyword">int</span> c = input.nextInt();</span><br><span class="line"></span><br><span class="line">		QuadraticEquation q = <span class="keyword">new</span> QuadraticEquation(a, b, c);</span><br><span class="line">		<span class="keyword">if</span> (q.getDiscriminant() &lt; <span class="number">0</span>)</span><br><span class="line">			System.out.println(<span class="string">"The equation has no real roots"</span>);</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (q.getDiscriminant() == <span class="number">0</span>)</span><br><span class="line">			System.out.printf(<span class="string">"The equation has one root: %.5f"</span>, q.getRoot1());</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			System.out.printf(<span class="string">"The equation has two roots: %.5f and %.5f"</span>,</span><br><span class="line">					q.getRoot1(), q.getRoot2());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>8.<em>(几何：交点)</em> 假设两条线段相交。第一条线段的两个端点是(x1,  y1)和(x2,  y2)，第二条线段的两个端点是(x3,  y3)和(x4,  y4)。编写一个程序，提示用户输入这四个点，然后显示它们的交点</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IntersectionPoint</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">double</span> x1, y1, x2, y2, x3, y3, x4, y4;</span><br><span class="line">	<span class="keyword">private</span> LinearEquation linearEquation;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">IntersectionPoint</span><span class="params">(<span class="keyword">double</span> x1, <span class="keyword">double</span> y1, <span class="keyword">double</span> x2,</span></span></span><br><span class="line"><span class="function"><span class="params">			<span class="keyword">double</span> y2, <span class="keyword">double</span> x3, <span class="keyword">double</span> y3, <span class="keyword">double</span> x4, <span class="keyword">double</span> y4)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.x1 = x1;</span><br><span class="line">		<span class="keyword">this</span>.y1 = y1;</span><br><span class="line">		<span class="keyword">this</span>.x2 = x2;</span><br><span class="line">		<span class="keyword">this</span>.y2 = y2;</span><br><span class="line">		<span class="keyword">this</span>.x3 = x3;</span><br><span class="line">		<span class="keyword">this</span>.y3 = y3;</span><br><span class="line">		<span class="keyword">this</span>.x4 = x4;</span><br><span class="line">		<span class="keyword">this</span>.y4 = y4;</span><br><span class="line">		linearEquation = <span class="keyword">new</span> LinearEquation(y1 - y2, x2 - x1,</span><br><span class="line">				y3 - y4 , x4 - x3, (y1 - y2) * x1 - (x1 - x2) * y1,</span><br><span class="line">				(y3 - y4) * x3 - (x3 - x4) * y3);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isParallel</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> !linearEquation.isSolvable();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getX</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> (linearEquation.getX());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getY</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> linearEquation.getY();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IntersectionPointTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">		System.out.print(<span class="string">"Enter x1, y1, x2, y2, x3, y3, x4, y4: "</span>);</span><br><span class="line">		<span class="keyword">double</span> x1 = input.nextDouble();</span><br><span class="line">		<span class="keyword">double</span> y1 = input.nextDouble();</span><br><span class="line">		<span class="keyword">double</span> x2 = input.nextDouble();</span><br><span class="line">		<span class="keyword">double</span> y2 = input.nextDouble();</span><br><span class="line">		<span class="keyword">double</span> x3 = input.nextDouble();</span><br><span class="line">		<span class="keyword">double</span> y3 = input.nextDouble();</span><br><span class="line">		<span class="keyword">double</span> x4 = input.nextDouble();</span><br><span class="line">		<span class="keyword">double</span> y4 = input.nextDouble();</span><br><span class="line"></span><br><span class="line">		IntersectionPoint intersectionPoint =</span><br><span class="line">				<span class="keyword">new</span> IntersectionPoint(x1, y1, x2, y2, x3, y3, x4, y4);</span><br><span class="line">		<span class="keyword">if</span> (intersectionPoint.isParallel())</span><br><span class="line">			System.out.println(<span class="string">"The two lines are parallel"</span>);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			System.out.printf(<span class="string">"The intersecting point is at (%.5f, %.4f)"</span>, intersectionPoint.getX(), intersectionPoint.getY());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LinearEquation</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">double</span> a, b, c, d, e, f;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">LinearEquation</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">double</span> b, <span class="keyword">double</span> c, <span class="keyword">double</span> d, <span class="keyword">double</span> e, <span class="keyword">double</span> f)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.a = a;</span><br><span class="line">		<span class="keyword">this</span>.b = b;</span><br><span class="line">		<span class="keyword">this</span>.c = c;</span><br><span class="line">		<span class="keyword">this</span>.d = d;</span><br><span class="line">		<span class="keyword">this</span>.e = e;</span><br><span class="line">		<span class="keyword">this</span>.f = f;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getA</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> a;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setA</span><span class="params">(<span class="keyword">double</span> a)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.a = a;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getB</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> b;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setB</span><span class="params">(<span class="keyword">double</span> b)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.b = b;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getC</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> c;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setC</span><span class="params">(<span class="keyword">double</span> c)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.c = c;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getD</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> d;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setD</span><span class="params">(<span class="keyword">double</span> d)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.d = d;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getE</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> e;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setE</span><span class="params">(<span class="keyword">double</span> e)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.e = e;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getF</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> f;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setF</span><span class="params">(<span class="keyword">double</span> f)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.f = f;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSolvable</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> a * d - b * c != <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getX</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> (e * d - b * f) / (a * d - b * c);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getY</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> (a * f - e * c) / (a * d - b * c);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Java/" rel="tag"># Java</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/09/Chapter8practice/" rel="prev" title="Java学习练习题(七)">
+      <i class="fa fa-chevron-left"></i> Java学习练习题(七)
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.1
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
