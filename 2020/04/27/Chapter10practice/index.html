@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="基于面向对象思考的9道练习题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java学习练习题(九)">
+<meta property="og:url" content="http://yoursite.com/2020/04/27/Chapter10practice/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="基于面向对象思考的9道练习题">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-04-27T01:13:54.000Z">
+<meta property="article:modified_time" content="2020-05-30T09:00:05.469Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/04/27/Chapter10practice/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>Java学习练习题(九) | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-right"></div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/27/Chapter10practice/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Java学习练习题(九)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-04-27 09:13:54" itemprop="dateCreated datePublished" datetime="2020-04-27T09:13:54+08:00">2020-04-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-05-30 17:00:05" itemprop="dateModified" datetime="2020-05-30T17:00:05+08:00">2020-05-30</time>
+              </span>
+
+          
+            <div class="post-description">基于面向对象思考的9道练习题</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>1.<em>(MyPoint类)</em> 设计一个名为MyPoint的类， 代表一个以x坐标和y坐标表示的点。该类包括：<br>·带获取方法的数据域x和y，用于表示坐标<br>·一个创建点(0, 0)的无参构造方法<br>·以指定坐标构建点的构造方法<br>·一个名为distance的方法， 返回从该点到MyPoint类型的指定点之间的距离<br>·一个名为distance的方法， 返回从该点到指定x和y坐标的另一个指定点之间的距离<br>·一个名为distance的方法，返回两个MyPoint对象之间的距离<br>画出该类的UML图并实现这个类。编写一个测试程序，创建两个点(0, 0)和(10, 30.5)，并显示它们之间的距离</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyPoint</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">double</span> x;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">double</span> y;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">MyPoint</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">double</span> y)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.x = x;</span><br><span class="line">		<span class="keyword">this</span>.y = y;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">MyPoint</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getX</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> x;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getY</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> y;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">distance</span><span class="params">(MyPoint p)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> Math.sqrt((x - p.getX()) * (x - p.getX()) +</span><br><span class="line">							(y - p.getY()) * (y - p.getY()));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">distance</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">double</span> y)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> Math.sqrt((<span class="keyword">this</span>.x - x) * (<span class="keyword">this</span>.x - x) +</span><br><span class="line">							(<span class="keyword">this</span>.y - y) * (<span class="keyword">this</span>.y - y));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">distance</span><span class="params">(MyPoint p1, MyPoint p2)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> Math.sqrt((p1.getX() - p2.getX()) * (p1.getX() - p2.getX())</span><br><span class="line">						+ (p1.getY() - p2.getY()) * (p1.getY() - p2.getY()));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyPointTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		MyPoint p1 = <span class="keyword">new</span> MyPoint();</span><br><span class="line">		MyPoint p2 = <span class="keyword">new</span> MyPoint(<span class="number">10</span>, <span class="number">30.5</span>);</span><br><span class="line"></span><br><span class="line">		System.out.printf(<span class="string">"p1: (%.2f, %.2f); p2: (%.2f, %.2f)\n"</span>,</span><br><span class="line">				p1.getX(), p1.getY(), p2.getX(), p2.getY());</span><br><span class="line">		System.out.printf(<span class="string">"d1: %.4f\n"</span>, p1.distance(p2));</span><br><span class="line">		System.out.printf(<span class="string">"d2: %.4f\n"</span>, p1.distance(<span class="number">10</span>, <span class="number">30.5</span>));</span><br><span class="line">		System.out.printf(<span class="string">"d3: %.4f\n"</span>, MyPoint.distance(p1, p2));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.<em>(显示素数)</em> 编写一个程序，然后按降序显示小于120的所有素数。使用StackOfIntegers类存储这些素数(例如：2、3、5、…)，获取之后按逆序显示它们</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShowPrimes</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		StackOfIntegers stackOfIntegers = <span class="keyword">new</span> StackOfIntegers();</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= <span class="number">120</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (isPrime(i))</span><br><span class="line">				stackOfIntegers.push(i);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">while</span> (!stackOfIntegers.empty()) &#123;</span><br><span class="line">			System.out.print(stackOfIntegers.pop() + <span class="string">" "</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isPrime</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n / <span class="number">2</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (n % i == <span class="number">0</span>)</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StackOfIntegers</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span>[] elements;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> size;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> DEFAULT_CAPACITY = <span class="number">16</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/** Construct a stack with the default capacity 16 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">StackOfIntegers</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>(DEFAULT_CAPACITY);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">StackOfIntegers</span><span class="params">(<span class="keyword">int</span> capacity)</span> </span>&#123;</span><br><span class="line">		elements = <span class="keyword">new</span> <span class="keyword">int</span>[capacity];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/** Push a new integer to the top of the stack */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (size &gt;= elements.length) &#123;</span><br><span class="line">			<span class="keyword">int</span>[] temp = <span class="keyword">new</span> <span class="keyword">int</span>[elements.length * <span class="number">2</span>];</span><br><span class="line">			System.arraycopy(elements, <span class="number">0</span>, temp, <span class="number">0</span>, elements.length);</span><br><span class="line">			elements = temp;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		elements[size++] = value;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/** Return and remove the top element from the stack */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> elements[--size];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/** Return the top element from the stack */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">peek</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> elements[size - <span class="number">1</span>];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/** Test whether the stack is empty */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">empty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> size == <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/** Return the number of elements in the stack */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getSize</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> size;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3.<em>(金融：Tax类)</em> 设计一个名为Tax的类，该类包含下面的实例数据域。<br>·<code>int filingStatus</code>(四种纳税人情况之一)：0 — 单身纳税人，1 — 已婚共缴纳税人或符合条件的鳏寡，2 — 已婚单缴纳税人，3 — 户主纳税人。使用公共静态常量<code>SINGLE_FILER(0)</code>、<code>MARRIED_JOINTLY_OR_QUALIFYING_QIDOW(ER)(1)</code>、<code>MARRIED_SEPARATELY(2)</code>和<code>HEAD_OF_HOUSEHOLD(3)</code>表示这些状态<br>·<code>int[][] brackets</code>：存储每种纳税人的纳税等级<br>·<code>double[] rates</code>：存储每种纳税等级的税率<br>·<code>double taxableIncome</code>：存储可征税收入<br>为每个数据提供获取方法和设置方法，并提供返回税款的<code>getTax()</code>方法。该类还提供一个无参构造方法和构造方法<code>Tax(filingStatus,brackets,rates,taxablrIncome)</code><br>画出该类的UML图并实现这个类。编写一个测试程序，使用Tax类对所给四种纳税人打印2001年和2009年的税款表，可征税收入范围在50000美元和60000美元之间，间隔区间为1000美元。2009年的税率如表1，2001年的税率如表2</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>临界税率</th>
+<th>单身纳税人</th>
+<th>已婚共同纳税人或符合条件的鳏寡</th>
+<th>已婚单独纳税人</th>
+<th>家庭户主纳税人</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10%</td>
+<td>$0~8350</td>
+<td>$0~ 16700</td>
+<td>$0~8350</td>
+<td>$0~11950</td>
+</tr>
+<tr>
+<td>15%</td>
+<td>$8351~33950</td>
+<td>$16701~67900</td>
+<td>$8351~33950</td>
+<td>$11951~45500</td>
+</tr>
+<tr>
+<td>25%</td>
+<td>$33951~82250</td>
+<td>$67801~137050</td>
+<td>$33951~68525</td>
+<td>$45501~117450</td>
+</tr>
+<tr>
+<td>28%</td>
+<td>$82251~171550</td>
+<td>$137051~208850</td>
+<td>$68526~104425</td>
+<td>$117451~190200</td>
+</tr>
+<tr>
+<td>33%</td>
+<td>$171551~372950</td>
+<td>$208851~372950</td>
+<td>$104426~186475</td>
+<td>$190201~372950</td>
+</tr>
+<tr>
+<td>35%</td>
+<td>$372951+</td>
+<td>$372951+</td>
+<td>$186476+</td>
+<td>$372951+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>临界税率</th>
+<th>单身纳税人</th>
+<th>已婚共同纳税人或符合条件的鳏寡</th>
+<th>已婚单独纳税人</th>
+<th>家庭户主纳税人</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>15%</td>
+<td>$0~27050</td>
+<td>$0~ 45200</td>
+<td>$0~22600</td>
+<td>$0~36250</td>
+</tr>
+<tr>
+<td>27.5%</td>
+<td>$27051~65550</td>
+<td>$45201~109250</td>
+<td>$22601~54625</td>
+<td>$36251~93650</td>
+</tr>
+<tr>
+<td>30.5%</td>
+<td>$65551~136750</td>
+<td>$109251~166500</td>
+<td>$54626~83250</td>
+<td>$93651~151650</td>
+</tr>
+<tr>
+<td>35.5%</td>
+<td>$136751~297350</td>
+<td>$166501~297350</td>
+<td>$83251~148675</td>
+<td>$151651~297350</td>
+</tr>
+<tr>
+<td>39.1%</td>
+<td>$297350+</td>
+<td>$297350+</td>
+<td>$148675+</td>
+<td>$297350+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Tax</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> filingStatus;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">double</span>[][] brackets;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">double</span>[] rates;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">double</span> taxableIncome;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Tax</span><span class="params">(<span class="keyword">int</span> filingStatus, <span class="keyword">double</span>[][] brackets, <span class="keyword">double</span>[] rates, <span class="keyword">double</span> taxableIncome)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.brackets = brackets;</span><br><span class="line">		<span class="keyword">this</span>.filingStatus = filingStatus;</span><br><span class="line">		<span class="keyword">this</span>.rates = rates;</span><br><span class="line">		<span class="keyword">this</span>.taxableIncome = taxableIncome;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Tax</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getFillingStatus</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> filingStatus;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setFillingStatus</span><span class="params">(<span class="keyword">int</span> fillingStatus)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.filingStatus = fillingStatus;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">double</span>[][] getBrackets() &#123;</span><br><span class="line">		<span class="keyword">return</span> brackets;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setBrackets</span><span class="params">(<span class="keyword">double</span>[][] brackets)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.brackets = brackets;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">double</span>[] getRates() &#123;</span><br><span class="line">		<span class="keyword">return</span> rates;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setRates</span><span class="params">(<span class="keyword">double</span>[] rates)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.rates = rates;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getTaxableIncome</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> taxableIncome;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTaxableIncome</span><span class="params">(<span class="keyword">double</span> taxableIncome)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.taxableIncome = taxableIncome;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getTax</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">double</span> tax = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span> (i &lt; brackets[filingStatus].length &amp;&amp; taxableIncome &gt; brackets[filingStatus][i]) &#123;</span><br><span class="line">			tax += (brackets[filingStatus][i] - brackets[filingStatus][i - <span class="number">1</span>]) * rates[i];</span><br><span class="line">			i++;</span><br><span class="line">		&#125;</span><br><span class="line">		tax += (taxableIncome - brackets[filingStatus][i - <span class="number">1</span>]) * rates[i];</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (taxableIncome &lt; brackets[filingStatus][<span class="number">1</span>])</span><br><span class="line">			tax = taxableIncome * rates[<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> tax;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TaxTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">double</span>[] rates9 = &#123;<span class="number">0</span>, <span class="number">0.1</span>, <span class="number">0.15</span>, <span class="number">0.25</span>, <span class="number">0.28</span>, <span class="number">0.33</span>, <span class="number">0.35</span>&#125;;</span><br><span class="line">		<span class="keyword">double</span>[][] brackets9 = &#123;</span><br><span class="line">				&#123;<span class="number">0</span>, <span class="number">8350</span>, <span class="number">33950</span>, <span class="number">82250</span>, <span class="number">171550</span>, <span class="number">372950</span>&#125;,	<span class="comment">// Single</span></span><br><span class="line">				&#123;<span class="number">0</span>, <span class="number">16700</span>, <span class="number">67900</span>, <span class="number">137050</span>, <span class="number">208850</span>, <span class="number">372950</span>&#125;,	<span class="comment">// Married jointly or qualifying widow(er)</span></span><br><span class="line">				&#123;<span class="number">0</span>, <span class="number">8350</span>, <span class="number">33950</span>, <span class="number">68525</span>, <span class="number">104425</span>, <span class="number">186475</span>&#125;, <span class="comment">// Married separately</span></span><br><span class="line">				&#123;<span class="number">0</span>, <span class="number">11950</span>, <span class="number">45500</span>, <span class="number">117450</span>, <span class="number">190200</span>, <span class="number">372950</span>&#125;	<span class="comment">// Head of household</span></span><br><span class="line">		&#125;;</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"Taxes for 2009:"</span>);</span><br><span class="line">		Tax[] tax9 = <span class="keyword">new</span> Tax[<span class="number">4</span>];</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">			tax9[i] = <span class="keyword">new</span> Tax(i, brackets9, rates9, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">50000</span>; j &lt; <span class="number">60000</span>; j += <span class="number">1000</span>) &#123;</span><br><span class="line">				tax9[i].setTaxableIncome(j);</span><br><span class="line">				System.out.printf(<span class="string">"%d -- %d: %f\n"</span>, i, j, tax9[i].getTax());</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">double</span>[] rates1 = &#123;<span class="number">0</span>, <span class="number">0.15</span>, <span class="number">0.275</span>, <span class="number">0.305</span>, <span class="number">0.355</span>, <span class="number">0.391</span>&#125;;</span><br><span class="line">		<span class="keyword">double</span>[][] brackets1 = &#123;</span><br><span class="line">				&#123;<span class="number">0</span>, <span class="number">27050</span>, <span class="number">65550</span>, <span class="number">136750</span>, <span class="number">297350</span>&#125;,	<span class="comment">// Single</span></span><br><span class="line">				&#123;<span class="number">0</span>, <span class="number">45200</span>, <span class="number">109250</span>, <span class="number">166500</span>, <span class="number">297350</span>&#125;,	<span class="comment">// Married jointly or qualifying widow(er)</span></span><br><span class="line">				&#123;<span class="number">0</span>, <span class="number">22600</span>, <span class="number">54625</span>, <span class="number">83250</span>, <span class="number">148675</span>&#125;, <span class="comment">// Married separately</span></span><br><span class="line">				&#123;<span class="number">0</span>, <span class="number">36250</span>, <span class="number">93650</span>, <span class="number">151650</span>, <span class="number">297350</span>&#125;	<span class="comment">// Head of household</span></span><br><span class="line">		&#125;;</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"Taxes for 2001:"</span>);</span><br><span class="line">		Tax[] tax1 = <span class="keyword">new</span> Tax[<span class="number">4</span>];</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">			tax1[i] = <span class="keyword">new</span> Tax(i, brackets1, rates1, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">50000</span>; j &lt; <span class="number">60000</span>; j += <span class="number">1000</span>) &#123;</span><br><span class="line">				tax1[i].setTaxableIncome(j);</span><br><span class="line">				System.out.printf(<span class="string">"%d -- %d: %f\n"</span>, i, j, tax1[i].getTax());</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>4.<em>(Queue类)</em>设计一个名为Queue的类用于存储整数。像栈一样，队列保存元素。在栈中，元素以“先进后出”的方式获取。在队列中，元素以“先进先出”的方式获取。该类包含：<br>·一个名为<code>element</code>的<code>int[]</code>类型的数据域，保存队列中的int值<br>·一个名为<code>size</code>的数据域，保存队列中的元素个数<br>·一个构造方法，以默认容量为8来创建一个Queue对象<br>·方法<code>enqueue(int v)</code>，用于将v加入队列中<br>·方法<code>dequeue()</code>，用于从队列中移除元素并返回该元素<br>·方法<code>empty()</code>，如果队列为空，该方法返回true<br>·方法<code>getSize()</code>，返回队列大小<br>画出该类的UML图并实现这个类，初始的数组大小为8.一旦元素个数超过了数组大小，数组大小将会翻倍。如果一个元素从数组的开始部分移除，你需要将数组的所有元素往左边移动一个位置。编写一个程序，添加从1到20的20个数字到队列中，然后将这些数字移除并显示它们</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Queue</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span>[] elements;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> size;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> DEFAULT_CAPACITY = <span class="number">8</span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Queue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		elements = <span class="keyword">new</span> <span class="keyword">int</span>[DEFAULT_CAPACITY];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">enqueue</span><span class="params">(<span class="keyword">int</span> v)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (size &gt;= elements.length) &#123;</span><br><span class="line">			<span class="keyword">int</span>[] temp = <span class="keyword">new</span> <span class="keyword">int</span>[elements.length * <span class="number">2</span>];</span><br><span class="line">			System.arraycopy(elements, <span class="number">0</span>, temp, <span class="number">0</span>, elements.length);</span><br><span class="line">			elements = temp;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		elements[size++] = v;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">dequeue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> v = elements[<span class="number">0</span>];</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; size; i++) &#123;</span><br><span class="line">			elements[i - <span class="number">1</span>] = elements[i];</span><br><span class="line">		&#125;</span><br><span class="line">		size--;</span><br><span class="line">		<span class="keyword">return</span> v;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">empty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> size == <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getSize</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> size;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">QueueTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Queue q = <span class="keyword">new</span> Queue();</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10000</span>; i++)</span><br><span class="line">			q.enqueue(i);</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"size = "</span> + q.getSize());</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; !q.empty(); i++) &#123;</span><br><span class="line">			System.out.print(q.dequeue() + <span class="string">" "</span>);</span><br><span class="line">			<span class="keyword">if</span> ((i + <span class="number">1</span>) % <span class="number">20</span> == <span class="number">0</span>)</span><br><span class="line">				System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>5.<em>(几何： 定义Triangle2D类)</em> 定义Triangle2D类,包含：<br>·三个名为p1、p2和p3的MyPoint类型数据，这三个数据与都带有获取和设置方法。其中MyPoint在如上第一题中定义<br>·一个无参构造方法，该方法创建三个坐标为(0, 0)、(1, 1)、和(2, 5)的点组成的默认三角形<br>·一个以指定点创建三角形的构造方法<br>·一个返回三角形面积的方法getArea()<br>·一个返回三角形周长的方法getPerimeter()<br>·如果给定的点p在这个三角形内，那么方法contains(MyPoint p)返回true<br>·如果给定的三角形在这个三角形内，那么方法contains(Triangle2D t)返回true<br>·如果给定的三角形和这个三角形重叠，那么方法overlaps(Triangle2D t)true<br>画出该类的UML图并实现这个类。编写测试程序，构造一个三角形并调用以上方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Triangle2D</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> MyPoint p1, p2, p3;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Triangle2D</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		p1 = <span class="keyword">new</span> MyPoint(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">		p2 = <span class="keyword">new</span> MyPoint(<span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">		p3 = <span class="keyword">new</span> MyPoint(<span class="number">2</span>, <span class="number">5</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Triangle2D</span><span class="params">(MyPoint p1, MyPoint p2, MyPoint p3)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.p1 = p1;</span><br><span class="line">		<span class="keyword">this</span>.p2 = p2;</span><br><span class="line">		<span class="keyword">this</span>.p3 = p3;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> MyPoint <span class="title">getP1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> p1;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setP1</span><span class="params">(MyPoint p1)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.p1 = p1;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> MyPoint <span class="title">getP2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> p2;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setP2</span><span class="params">(MyPoint p2)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.p2 = p2;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> MyPoint <span class="title">getP3</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> p3;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setP3</span><span class="params">(MyPoint p3)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.p3 = p3;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getArea</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">double</span> a = p1.distance(p2);</span><br><span class="line">		<span class="keyword">double</span> b = p1.distance(p3);</span><br><span class="line">		<span class="keyword">double</span> c = p2.distance(p3);</span><br><span class="line">		<span class="keyword">double</span> p = (a + b + c) / <span class="number">2</span>;	<span class="comment">// 面积公式</span></span><br><span class="line">		<span class="keyword">return</span> Math.sqrt(p * (p - a) * (p - b) * (p - c));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getPerimeter</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> p1.distance(p2) + p1.distance(p3) + p2.distance(p3);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">contains</span><span class="params">(MyPoint p)</span> </span>&#123;</span><br><span class="line">		Triangle2D t1 = <span class="keyword">new</span> Triangle2D(p, p1, p2);</span><br><span class="line">		Triangle2D t2 = <span class="keyword">new</span> Triangle2D(p, p1, p3);</span><br><span class="line">		Triangle2D t3 = <span class="keyword">new</span> Triangle2D(p, p2, p3);</span><br><span class="line">		<span class="keyword">if</span> (t1.getArea() + t2.getArea() + t3.getArea() == <span class="keyword">this</span>.getArea())</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">contains</span><span class="params">(Triangle2D t)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="keyword">this</span>.contains(t.getP1()) &amp;&amp; <span class="keyword">this</span>.contains(t.getP2()) &amp;&amp; <span class="keyword">this</span>.contains(t.getP3()))</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">overlaps</span><span class="params">(Triangle2D t)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (isItersected(p1, p2, t.p1, t.p2) || isItersected(p1, p2, t.p1, t.p3) ||</span><br><span class="line">				isItersected(p1, p2, t.p2, t.p3) || isItersected(p1, p3, t.p1, t.p2) ||</span><br><span class="line">				isItersected(p1, p3, t.p1, t.p3) || isItersected(p1, p3, t.p2, t.p3) ||</span><br><span class="line">				isItersected(p2, p3, t.p1, t.p2) || isItersected(p2, p3, t.p1, t.p3) ||</span><br><span class="line">				isItersected(p2, p3, t.p2, t.p3))</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isItersected</span><span class="params">(MyPoint p1, MyPoint p2, MyPoint p3, MyPoint p4)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">double</span> a = p1.getY() - p2.getY();</span><br><span class="line">		<span class="keyword">double</span> b = p2.getX() - p1.getX();</span><br><span class="line">		<span class="keyword">double</span> c = p3.getY() - p4.getY();</span><br><span class="line">		<span class="keyword">double</span> d = p4.getX() - p3.getX();</span><br><span class="line">		<span class="keyword">if</span> (a * d - b * c == <span class="number">0</span>)</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Triangle2DTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Triangle2D t1 = <span class="keyword">new</span> Triangle2D(<span class="keyword">new</span> MyPoint(<span class="number">2.5</span>, <span class="number">2</span>), <span class="keyword">new</span> MyPoint(<span class="number">4.2</span>, <span class="number">3</span>), <span class="keyword">new</span> MyPoint(<span class="number">5</span>, <span class="number">3.5</span>));</span><br><span class="line">		System.out.println(<span class="string">"t1's area is: "</span> + t1.getArea());</span><br><span class="line">		System.out.println(<span class="string">"t1's perimeter is: "</span> + t1.getPerimeter());</span><br><span class="line">		System.out.printf(<span class="string">"Is t1 contains (3, 3)? %b\n"</span>, t1.contains(<span class="keyword">new</span> MyPoint(<span class="number">3</span>, <span class="number">3</span>)));</span><br><span class="line">		System.out.println(<span class="string">"Is t1 contains triangle (2.9, 2), (4, 1), (1, 3.4)? "</span> +</span><br><span class="line">				t1.contains(<span class="keyword">new</span> Triangle2D(<span class="keyword">new</span> MyPoint(<span class="number">2.9</span>, <span class="number">2</span>), <span class="keyword">new</span> MyPoint(<span class="number">4</span>, <span class="number">1</span>), <span class="keyword">new</span> MyPoint(<span class="number">1</span>, <span class="number">3.4</span>))));</span><br><span class="line">		System.out.println(<span class="string">"is t1 overlaps triangle (2, 5.5), (4, -3), (2, 6.5)? "</span> +</span><br><span class="line">				t1.overlaps(<span class="keyword">new</span> Triangle2D(<span class="keyword">new</span> MyPoint(<span class="number">2</span>, <span class="number">5.5</span>), <span class="keyword">new</span> MyPoint(<span class="number">4</span>, -<span class="number">3</span>), <span class="keyword">new</span> MyPoint(<span class="number">2</span>, <span class="number">6.5</span>))));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>6.<em>(MyDate类)</em> 设计一个名为MyDate的类，该类包含：<br>·表示日期的数据域year、month和day。月份是从0开始的，即0表示一月份<br>·一个无参构造方法，该方法创建当前日期的MyDate对象<br>·一个构造方法，以指定的流逝时间值创建MyDate对象，该流逝时间从1970年1月1日午夜开始计算并以毫秒数为单位<br>·一个构造方法，以指定年、月、日创建一个MyDate对象<br>·三个分别用于数据域year、month和day的获取方法<br>·一个名为setDate(long elapsedTime)的方法，使用流逝的时间为对象设置新日期<br>画出该类的UML图并实现这个类。编写测试程序，创建两个MyDate对象(使用new MyDate()和new MyDate(34355555133101L))，然后显示它们的小时分钟和秒</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyDate</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> year;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> month;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> day;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getYear</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> year;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMonth</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> month;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getDay</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> day;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">MyDate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		GregorianCalendar myCalendar = <span class="keyword">new</span> GregorianCalendar();</span><br><span class="line">		<span class="keyword">this</span>.year = myCalendar.get(GregorianCalendar.YEAR);</span><br><span class="line">		<span class="keyword">this</span>.month = myCalendar.get(GregorianCalendar.MONTH) - <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">this</span>.day = myCalendar.get(GregorianCalendar.DATE);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">MyDate</span><span class="params">(<span class="keyword">long</span> elapsedTime)</span> </span>&#123;</span><br><span class="line">		GregorianCalendar myCalendar = <span class="keyword">new</span> GregorianCalendar();</span><br><span class="line">		myCalendar.setTimeInMillis(elapsedTime);</span><br><span class="line">		<span class="keyword">this</span>.year = myCalendar.get(GregorianCalendar.YEAR);</span><br><span class="line">		<span class="keyword">this</span>.month = myCalendar.get(GregorianCalendar.MONTH) - <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">this</span>.day = myCalendar.get(GregorianCalendar.DATE);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">MyDate</span><span class="params">(<span class="keyword">int</span> year, <span class="keyword">int</span> month, <span class="keyword">int</span> day)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.year = year;</span><br><span class="line">		<span class="keyword">this</span>.month = month;</span><br><span class="line">		<span class="keyword">this</span>.day = day;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setDate</span><span class="params">(<span class="keyword">long</span> elapsedTime)</span> </span>&#123;</span><br><span class="line">		GregorianCalendar myCalendar = <span class="keyword">new</span> GregorianCalendar();</span><br><span class="line">		myCalendar.setTimeInMillis(elapsedTime);</span><br><span class="line">		<span class="keyword">this</span>.year = myCalendar.get(GregorianCalendar.YEAR);</span><br><span class="line">		<span class="keyword">this</span>.month = myCalendar.get(GregorianCalendar.MONTH) - <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">this</span>.day = myCalendar.get(GregorianCalendar.DATE);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyDateTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		MyDate d1 = <span class="keyword">new</span> MyDate();</span><br><span class="line">		MyDate d2 = <span class="keyword">new</span> MyDate(<span class="number">34355555133101L</span>);</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"d1's year/month/date: "</span> + d1.getYear() +</span><br><span class="line">				<span class="string">"/"</span> + d1.getMonth() + <span class="string">"/"</span> + d1.getDay());</span><br><span class="line">		System.out.println(<span class="string">"d2's year/month/date: "</span> + d2.getYear() +</span><br><span class="line">				<span class="string">"/"</span> + d2.getMonth() + <span class="string">"/"</span> + d2.getDay());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>7.<em>(被2或3整除)</em> 找出能被2或3整除的有50个十进制位数的前10个数字</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Division</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		BigInteger b = <span class="keyword">new</span> BigInteger(<span class="string">"10"</span>);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">49</span>; i++) &#123;</span><br><span class="line">			b = b.multiply(BigInteger.TEN);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(<span class="string">"b: "</span> + b);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">		BigInteger mod2Res;</span><br><span class="line">		BigInteger mod3Res;</span><br><span class="line">		<span class="keyword">while</span> (count &lt; <span class="number">10</span>) &#123;</span><br><span class="line">			mod2Res = b.mod(<span class="keyword">new</span> BigInteger(<span class="string">"2"</span>));</span><br><span class="line">			mod3Res = b.mod(<span class="keyword">new</span> BigInteger(<span class="string">"3"</span>));</span><br><span class="line">			<span class="keyword">if</span> (mod2Res == BigInteger.ZERO || mod3Res == BigInteger.ZERO) &#123;</span><br><span class="line">				System.out.println(count + <span class="string">": "</span> + b);</span><br><span class="line">				count++;</span><br><span class="line">			&#125;</span><br><span class="line">			b = b.add(BigInteger.ONE);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>8.<em>(大素数)</em> 编写程序找出五个大于Long.MAX_VALUE的素数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BigPrimes</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		BigInteger b = <span class="keyword">new</span> BigInteger(String.valueOf(Long.MAX_VALUE));</span><br><span class="line">		<span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span> (count &lt; <span class="number">5</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span> (b.isProbablePrime(<span class="number">1</span>)) &#123;</span><br><span class="line">				count++;</span><br><span class="line">				System.out.println(count + <span class="string">": "</span> + b);</span><br><span class="line">			&#125;</span><br><span class="line">			b = b.add(BigInteger.ONE);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>9.<em>(近似e)</em> 在之前提到可以使用下面数列近似计算e：</p>
+<script type="math/tex; mode=display">e = 1+\frac{1}{1!}+\frac{1}{2!}+\frac{1}{3!}+\frac{1}{4!}+\cdots+\frac{1}{i!}</script><p>为了得到更好的精确度，在计算中使用25位精度的BigDecimal。编写程序，显示当i=100,  200,  …  ,  1000时e的值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Close2e</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">100</span>; i &lt;= <span class="number">1000</span>; i += <span class="number">100</span>) &#123;</span><br><span class="line">			BigDecimal e = <span class="keyword">new</span> BigDecimal(<span class="number">1</span>);</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; j++) &#123;</span><br><span class="line">				BigDecimal term = BigDecimal.ONE;</span><br><span class="line">				<span class="keyword">for</span> (BigDecimal k = BigDecimal.ONE; k.compareTo(<span class="keyword">new</span> BigDecimal(j)) &lt;= <span class="number">0</span>; k = k.add(BigDecimal.ONE)) &#123;</span><br><span class="line">					term = term.multiply(k);</span><br><span class="line">				&#125;</span><br><span class="line">				e = e.add(BigDecimal.ONE.divide(term, <span class="number">25</span>, BigDecimal.ROUND_UP));</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println(<span class="string">"i = "</span> + i + <span class="string">": "</span> + e);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Java/" rel="tag"># Java</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/22/Chapter9practice/" rel="prev" title="Java学习练习题(八)">
+      <i class="fa fa-chevron-left"></i> Java学习练习题(八)
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.1
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
